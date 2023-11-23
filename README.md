@@ -1,7 +1,8 @@
 # Bash-Scripting
 
 This repository contains all the  basics needed to learn bash/shell scripting and the major goal is to automate the entire configuration management procedure involved as a part of set-up.
-...........
+
+
 
 ## How to push the code to git hub ??
 
