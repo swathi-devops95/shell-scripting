@@ -21,6 +21,7 @@ echo -e "\e[31m iam printing red color \e[0m"
 echo -e "\e[34m iam printing blue color \e[0m"
 echo -e "\e[35m iam printing magenta color \e[0m"
 echo -e "\e[36m iam printing cyan color \e[0m"
+echo -e "\e[43;34 iam printing both  the colors \e[0m"
 
 # To print something with background+foreground here is the syntax
 
@@ -28,4 +29,4 @@ echo -e "\e[36m iam printing cyan color \e[0m"
 # Example :
 # echo -e "\e[43;34  iam printing both colors \e[0m"
 
-echo -e "\e[43;34 iam printing both  the colors \e[0m"
+
