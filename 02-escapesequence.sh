@@ -20,7 +20,7 @@
   echo line2
   echo line3
   
-  echo -e "line4\nline5"
+  echo -e "line4\nline5\nline6"
   # when ever you are using special characters always put them in doublequots.
   # " " :Double Quotes.
   #' '  :Single Quotes.
