@@ -12,4 +12,7 @@
 
 # syntax to print the color:
 # echo -e "\e[colorcodem  your message to be printed in colour \e[0m"
+# Example:
 # echo -e "\e[33m iam printing yellow colour \e[0m"
+
+ echo -e "\e[33m iam printing yellow color \e[0m"
