@@ -22,4 +22,9 @@
 
 echo a
 
-echo $a
+echo "printing the value of $a"              # $a and ${a} gives tou same result--prefer to use {}
+echo "printing the vlue of${a}"
+
+#[]-Square bracket
+#{}- Flower bracket
+#()- Paranthesis
