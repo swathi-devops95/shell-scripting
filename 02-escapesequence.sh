@@ -28,5 +28,7 @@
   # \t : this gives a tab space
 
   echo -e "cloud\tDevops\tare\tbooming"
+  echo -e "scripting\tis\tvery\timportant"
+  echo -e "which\tautomates\teverything \nthis is bash"
 
 
