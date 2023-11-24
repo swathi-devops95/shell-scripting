@@ -15,6 +15,9 @@
 # Example:
 # echo -e "\e[33m iam printing yellow colour \e[0m"
 
- echo -e "\e[33m iam printing yellow color \e[0m"
- echo -e "\e[32m iam printing green color \e[0m"
- echo -e "\e[31m iam printing red color \e[0m"
+echo -e "\e[33m iam printing yellow color \e[0m"
+echo -e "\e[32m iam printing green color \e[0m"
+echo -e "\e[31m iam printing red color \e[0m"
+echo -e "\e[34m iam printing blue color \e[0m"
+echo -e "\e[35m iam printing magenta color \e[0m"
+echo -e "\e[36m iam printing cyan color \e[0m"
