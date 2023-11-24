@@ -28,4 +28,4 @@ echo -e "\e[36m iam printing cyan color \e[0m"
 # Example :
 # echo -e "\e[43;34  iam printing both colors \e[0m"
 
-echo -e "\e[43;34 print both colors \e][0m"
+echo -e "\e[43;34 iam printing both  the colors \e[0m"
