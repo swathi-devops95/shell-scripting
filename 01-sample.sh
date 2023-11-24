@@ -4,9 +4,8 @@
  # There can only be one interpreter per script and that should always be the first line of the script
   
 
-  echo welcome to bash scripting 
+  echo welcome to shell scripting
 
-  result:basch scripting
 
   # This is how we execute the scripts
 
