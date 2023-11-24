@@ -30,9 +30,13 @@ $ code foldername
 
 ## Following are the shell scripting topics which we discuss as a part of our project
 
+
 1- shebang notation and comments
+
 2- printing
+
 3- Variables
+
          - Local variables
          -Environment variables
          -command substitution
@@ -42,9 +46,16 @@ $ code foldername
          -promts
 
 5- Functions
+
 6- Redirectors ,quotes and exit status
+
 7- Conditions
+
 8- Loops
+
 9- Basics of SED command
+
 10- Commands
+
+
 
