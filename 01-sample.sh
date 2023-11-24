@@ -11,5 +11,4 @@
   # $ bash scriptname.sh or sh scriptname.sh or ./scriptname.sh
 
   echo line1
-  
   echo line2
