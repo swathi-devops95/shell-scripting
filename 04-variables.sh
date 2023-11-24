@@ -22,8 +22,8 @@
 
 echo a
 
-echo "printing the value of : $a"              # $a and ${a} gives tou same result--prefer to use {}
-echo "printing the value of :${a}"
+echo "printing the value of a : $a"              # $a and ${a} gives tou same result--prefer to use {}
+echo "printing the value of a :${a}"
 
 #[]-Square bracket
 #{}- Flower bracket
