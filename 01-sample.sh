@@ -4,7 +4,7 @@
  # There can only be one interpreter per script and that should always be the first line of the script
   
 
-  echo welcome to bash scripting (like print f command in c ,whatever we want to print we use echo)
+  echo welcome to bash scripting 
 
   result:basch scripting
 
