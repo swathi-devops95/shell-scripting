@@ -25,4 +25,8 @@
   # " " :Double Quotes.
   #' '  :Single Quotes.
 
+  # \t : this gives a tab space
+
+  echo -e "cloud\tDevops\tare\tbooming"
+
 
