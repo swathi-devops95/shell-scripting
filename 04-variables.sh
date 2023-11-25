@@ -21,6 +21,8 @@
 # echo $a   (gives u value assigned to a)
 
 echo a
+echo b
+echo c
 
 echo "printing the value of a : $a"             # $a and ${a} gives tou same result--prefer to use {}
 echo "printing the value of a : ${a}"
