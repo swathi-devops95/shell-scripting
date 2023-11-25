@@ -27,11 +27,15 @@ echo $c
 echo "printing the value of a : $a"             # $a and ${a} gives tou same result--prefer to use {}
 echo "printing the value of a : ${a}"
 echo "printing the value of x : ${x}           # x is not declared and we are attemting to print ,it will not
-                                                 any error,it will simply show us a "Blank" which is "Null".
+echo "printing the value of b : ${b}                                     
+                                                  any error,it will simply show us a "Blank" which is "Null".
                                                  
 
 
 #[]-Square bracket
 #{}- Flower bracket
 #()- Paranthesis
+
+echo "printing the value of c : $c"
+
 
