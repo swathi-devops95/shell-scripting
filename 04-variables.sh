@@ -26,7 +26,7 @@ echo $c
 
 echo "printing the value of a : $a"             # $a and ${a} gives tou same result--prefer to use {}
 echo "printing the value of a : ${a}"
-echo "printing the value of x : ${b}           # x is not declared and we are attemting to print ,it will not
+echo "printing the value of b : ${b}           # x is not declared and we are attemting to print ,it will not
                                      
                                                   any error,it will simply show us a "Blank" which is "Null".
                                                  
