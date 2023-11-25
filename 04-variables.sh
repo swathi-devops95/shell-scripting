@@ -10,21 +10,26 @@
 
 # IN LINUX/SHELL SCRIPTING THERE IS NO CONCEPT OF DATATYPES BY DEFAULT EVEYTHING IS A STRING
 
-# If your input or variaables are having special characters enclopse them in double quotes ""
+# If your input or variables are having special characters enclose them in double quotes ""
 
 # How can i print the value of a variable????
       #  Using special character we are going to print the value of a variable.
 
-# $: this is the special charactr used to print the value of a variable
+# $: this is the special character used to print the value of a variable
 
 # echo a    (gives you a)
-# echo $a   (gives u vlue assigned to a)
+# echo $a   (gives u value assigned to a)
 
 echo a
 
-echo "printing the value of a : $a"              # $a and ${a} gives tou same result--prefer to use {}
-echo "printing the value of a :${a}"
+echo "printing the value of a : $a"             # $a and ${a} gives tou same result--prefer to use {}
+echo "printing the value of a : ${a}"
+echo "printing the value of x : ${x}           # x is not declared and we are attemting to print ,it will not
+                                                 any error,it will simply show us a "Blank" which is "Null".
+                                                 
+
 
 #[]-Square bracket
 #{}- Flower bracket
 #()- Paranthesis
+
