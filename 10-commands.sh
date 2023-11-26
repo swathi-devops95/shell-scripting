@@ -35,9 +35,18 @@
 
 
 # i would like to declare a function which tells statistics
+
+hai() {
+    echo "iam a hai function"
+    echo "iam here to tell you hai"
+    echo "iam completed"
+}
+
+
  stat() {
       echo "number of sessions opened are $(who | wc -l)"
       echo "todays date is $(date +%F)"
+      hai                               #"calling one function frim another- hai from stat"
  }
  stat
  sleep 1
@@ -49,14 +58,14 @@
 
 
 #ex:
-devops() {
-    echo  "course tenure 3 months"
-    echo  "trainer me"
-    echo  "mainly focusing on market standards"
-    echo  "course completed"
-}
-devops
-sleep 1
-devops 
-sleep 2
-devops
+# devops() {
+#     echo  "course tenure 3 months"
+#     echo  "trainer me"
+#     echo  "mainly focusing on market standards"
+#     echo  "course completed"
+# }
+# devops
+# sleep 1
+# devops 
+# sleep 2
+# devops
