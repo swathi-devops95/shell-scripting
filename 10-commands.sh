@@ -46,7 +46,8 @@ hai() {
  stat() {
       echo "number of sessions opened are $(who | wc -l)"
       echo "todays date is $(date +%F)"
-      hai                               #"calling one function frim another- hai from stat"
+      echo avg cpu utilization in last 5 min is $( uptime | awk -F : '{print $NF}'|AWK -F , '{print $2}')  
+        hai                               #"calling one function frim another- hai from stat"
  }
  stat
  sleep 1
