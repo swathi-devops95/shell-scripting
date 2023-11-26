@@ -4,6 +4,8 @@
 
  #ROCKET_NAME=CHANDRAYAN
 echo $0      # $0 prints th script nme of you ar executing
+echo $1
+echo $2
 echo "executed script name is : $0"     # we are harcoding it
 echo "Name of the recently launched rocket in india  is : $1"        # WE ARE HARDCODING THIS ALSO
 echo "Name of the popular car in states is : $2"
