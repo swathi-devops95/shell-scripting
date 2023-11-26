@@ -26,8 +26,17 @@
 #function is majorly used to group certain sort of things and call it whenever you want
 #function helps you in eliminating repetive set of codes n number of times
 
-sample() {
-    echo haifrom sample function
-    echo sample function is completed
+# sample() {
+#     echo hai
+#     from sample function
+#     echo sample function is completed
+# }
+# sample
+
+
+# i would like to declare a function which tells statistics
+stat() {
+     echo "number of sessions opened are $(who |c-l)"
+     echo "todays date is $(DATE+%F)"
 }
-sample
+stat
