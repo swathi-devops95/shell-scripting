@@ -36,7 +36,7 @@
 
 # i would like to declare a function which tells statistics
 stat() {
-     echo "number of sessions opened are $(who |c-l)"
-     echo "todays date is $(DATE+%F)"
+     echo "number of sessions opened are $(who | wc -l)"
+     echo "todays date is $(date+%F)"
 }
 stat
