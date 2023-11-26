@@ -14,3 +14,6 @@ echo '$?'    # $? is going to print the exit code of the last command.
 echo '$*'   # $* is going to print the used variables        
 echo '$@'    # $* is going to print the used variables
 
+#Single quotes will supress the value of a special variables
+#Whenever you have a special variables avoid single quotes prefer going with doubl quotes
+
