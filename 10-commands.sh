@@ -40,3 +40,7 @@ stat() {
      echo "todays date is $(date +%F)"
 }
 stat
+sleep 1
+stat
+sleep 2
+stat
