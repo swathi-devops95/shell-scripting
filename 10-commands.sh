@@ -35,12 +35,27 @@
 
 
 # i would like to declare a function which tells statistics
-stat() {
-     echo "number of sessions opened are $(who | wc -l)"
-     echo "todays date is $(date +%F)"
+# stat() {
+#      echo "number of sessions opened are $(who | wc -l)"
+#      echo "todays date is $(date +%F)"
+# }
+# stat
+# sleep 1
+# stat
+# sleep 2
+# stat
+
+#you wrote once and calling it three times
+
+
+devops() {
+    echo  "course tenure 3 months"
+    echo  "trainer me"
+    echo  "mainly focusing on market standards"
+    echo  "course completed"
 }
-stat
+devops
 sleep 1
-stat
+devops 
 sleep 2
-stat
+devops
