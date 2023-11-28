@@ -74,5 +74,6 @@ sleep 2
 
 start
 hai
+start
 
 # "This is called declaring a function and calling a function"
