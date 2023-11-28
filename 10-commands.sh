@@ -1,6 +1,6 @@
 #!/bib/bash
 
-There are four tyoes of commands avialbale
+#There  are four tyoes of commands avialbale
 
 # 1) Binary             (/bin, /sbin)
                        # /bin-commands which are saved inside bin are regular commands -ex-gotto terminal and type cat you can see-cat is /uer/bin/cat
@@ -34,5 +34,8 @@ devops() {
            echo    course tenure is 3 months
            echo    all you need to do is hands on practise on daily basis
 }
+
+devops
+            echo  message completed
 
 devops
