@@ -46,9 +46,15 @@
 # devops
 #             echo message completed
 
-sample () {
-    echo " hi from sample function"
-    echo " sample function is completed"
-    echo "bye"
+# sample () {
+#     echo " hi from sample function"
+#     echo " sample function is completed"
+#     echo "bye"
+# }
+# sample
+
+start() {
+    echo "number of sessions opened are $(who | wc -l)"
+    echo "todays date is $(date +%F)"
 }
-sample
+start
