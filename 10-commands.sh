@@ -64,6 +64,7 @@ start() {
 
     echo "number of sessions opened are $(who | wc -l)"
     echo "todays date is $(date +%F)"
+    echo "average load of cpu in last 5 min $(uptime |awk -F : '{print $NF}' | awk -F , '{print $2}')"
     
 
        
@@ -75,3 +76,9 @@ start
 
 
 # "This is called declaring a function and calling a function"
+
+
+#If you want to print since the machine is up the command is uptime
+
+# Load average in last 5 min:
+#uptime |awk -F : '{print $NF}' | awk -F , '{print $2}'
