@@ -53,11 +53,17 @@
 # }
 # sample
 
+hai () {
+    echo hai
+}
+hai
+
 start() {
     echo "number of sessions opened are $(who | wc -l)"
     echo "todays date is $(date +%F)"
 }
 start
+hai
 
 sleep 1
 
@@ -66,3 +72,5 @@ start
 sleep 2
 
 start
+
+# "This is called declaring a function and calling a function"
