@@ -56,24 +56,19 @@
 hai () {
     echo hai
 }
-hai
+
 
 start() {
     echo "number of sessions opened are $(who | wc -l)"
     echo "todays date is $(date +%F)"
+    
+
+    hai     
 }
-start
-hai                             ## "calling a function fromanother function"
 
-sleep 1
-
+ 
 start
-hai
+                            ## "calling a function fromanother function"
 
-sleep 2
-
-start
-hai
-start
 
 # "This is called declaring a function and calling a function"
