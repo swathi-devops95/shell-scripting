@@ -38,4 +38,3 @@ devops() {
 devops
             echo  message completed
 
-devops
