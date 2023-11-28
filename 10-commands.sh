@@ -27,22 +27,28 @@
 
 # f               # this is how we call a function.   
 
-devops() {
-           echo    this is aws devops course
-           echo    the entire course is trained by me
-           echo    we are going to teach you all market standrds
-           echo    course tenure is 3 months
-           echo    all you need to do is hands on practise on daily basis
-}
+# devops() {
+#            echo    this is aws devops course
+#            echo    the entire course is trained by me
+#            echo    we are going to teach you all market standrds
+#            echo    course tenure is 3 months
+#            echo    all you need to do is hands on practise on daily basis
+# }
 
-devops
-            echo  message completed
+# devops
+#             echo  message completed
 
-sleep 10
-devops 
-            echo messahe completed
+# sleep 10
+# devops 
+#             echo messahe completed
         
-sleep 10
-devops
-            echo message completed
-            
+# sleep 10
+# devops
+#             echo message completed
+
+sample () {
+    echo " hi from sample function"
+    echo " sample function is completed"
+    echo "bye"
+}
+sample
