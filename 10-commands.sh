@@ -63,7 +63,7 @@ start() {
     echo "todays date is $(date +%F)"
 }
 start
-hai
+hai                             ## "calling a function fromanother function"
 
 sleep 1
 
