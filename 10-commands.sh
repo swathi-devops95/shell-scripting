@@ -58,3 +58,11 @@ start() {
     echo "todays date is $(date +%F)"
 }
 start
+
+sleep 1
+
+start
+
+sleep 2
+
+start
