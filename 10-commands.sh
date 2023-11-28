@@ -59,11 +59,14 @@ hai () {
 
 
 start() {
+
+    hai
+
     echo "number of sessions opened are $(who | wc -l)"
     echo "todays date is $(date +%F)"
     
 
-    hai     
+       
 }
 
  
