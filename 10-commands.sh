@@ -16,13 +16,23 @@ There are four tyoes of commands avialbale
 #4) Functions                       # Functions are nothing but a set of commands that can be written in a sequence order and can be called n number of times whenever required.
 
 
-# how todeclare af function
+# how to declare a function
 
-#This is how we declare a function
+#This is how we declare a function :
 
-f() {
+# f() {
 
-    echo hai
+#     echo hai
+# }
+
+# f               # this is how we call a function.   
+
+devops() {
+           echo    this is aws devops course
+           echo    the entire course is trained by me
+           echo    we are going to teach you all market standrds
+           echo    course tenure is 3 months
+           echo    all you need to do is hands on practise on daily basis
 }
 
-f               # this is how we call a function.   
+devops
