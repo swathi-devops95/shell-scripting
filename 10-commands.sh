@@ -38,3 +38,7 @@ devops() {
 devops
             echo  message completed
 
+sleep 10
+devops 
+sleep 10
+devops
