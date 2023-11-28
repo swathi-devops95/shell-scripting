@@ -1,72 +1,28 @@
-#!/bin/bash
-#There are 4 type of commands avialable
-# 1) Binary                     (/bin ,/sbin)
-                                #/bin--commands which are saved inside the bin are regular commands.
-                                #/sbin--commands which are saved in sbin which is nothing but secure bin are the commands which can be invoked only by the root user.
+#!/bib/bash
 
-# 2) Aliases                    (Aliases are shortcuts, alias net="netstat -tulpn")
+There are four tyoes of commands avialbale
 
-# 3) Shell built -in commands   #commands which comes with the shell
-                                #ex-type cd ,type echo , type break 
+# 1) Binary             (/bin, /sbin)
+                       # /bin-commands which are saved inside bin are regular commands -ex-gotto terminal and type cat you can see-cat is /uer/bin/cat
+                       #/sbin-commands which are sacved in sbin are secure commands that can be invoked only by the root user
 
-# 4) Functions
-            #functions are nothing but a set of commands that can be written in a sequence and cn be called n number of times as per 
+# 2) Aliases            (Aliases are shortcuts      aliase net ="netstat-tulpn")
+#3)Shell -built in commands         commands comes up with shell
+                                    # ex- got to terminal
+                                    #     type cd  -> enter  ->cd is a shell builtin
+                                    #     type echo -> enter -> echo is a builtin
+                                    #     type break -> enter -> break is a shell builtin
 
-
-# how to declare a function?
-
-# This is how you declare a function 
-# f() {
-#     echo hai
-# }        
-
-# this is how we call a function
-# f
-
-#function is majorly used to group certain sort of things and call it whenever you want
-#function helps you in eliminating repetive set of codes n number of times
-
-# sample() {
-#     echo hai
-#     from sample function
-#     echo sample function is completed
-# }
-# sample
+#4) Functions                       # Functions are nothing but a set of commands that can be written in a sequence order and can be called n number of times whenever required.
 
 
-# i would like to declare a function which tells statistics
+# how todeclare af function
 
-hai() {
-    echo "iam a hai function"
-    echo "iam here to tell you hai"
-    echo "iam completed"
+#This is how we declare a function
+
+f() {
+
+    echo hai
 }
 
-
- stat() {
-      echo "number of sessions opened are $(who | wc -l)"
-      echo "todays date is $(date +%F)"
-      echo "avg cpu utilization in last 5 min is $( uptime | awk -F : '{print $NF}'|awk -F , '{print $2}') "
-        hai                               #"calling one function frim another- hai from stat"
- }
- stat
- sleep 1
- stat
- sleep 2
- stat
-
-#you wrote once and calling it three times
-
-
-#ex:
-# devops() {
-#     echo  "course tenure 3 months"
-#     echo  "trainer me"
-#     echo  "mainly focusing on market standards"
-#     echo  "course completed"
-# }
-# devops
-# sleep 1
-# devops 
-# sleep 2
-# devops
+f               # this is how we call a function.   
