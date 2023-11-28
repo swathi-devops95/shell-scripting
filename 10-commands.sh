@@ -64,7 +64,8 @@ start() {
 
     echo "number of sessions opened are $(who | wc -l)"
     echo "todays date is $(date +%F)"
-    echo "average load of cpu in last 5 min $(uptime |awk -F : '{print $NF}' | awk -F , '{print $2}')"
+    echo "cpu utilization in last 5 min $(uptime |awk -F : '{print $NF}' | awk -F , '{print $2}')"
+    echo "cpu utilization in last 15 min $(uptime |awk -F : '{print $NF}' | awk -F , '{print $3}')"
     
 
        
