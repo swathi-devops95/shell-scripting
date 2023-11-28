@@ -40,5 +40,9 @@ devops
 
 sleep 10
 devops 
+            echo messahe completed
+        
 sleep 10
 devops
+            echo message completed
+            
