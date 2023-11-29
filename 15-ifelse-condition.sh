@@ -19,4 +19,6 @@ if [ "$ACTION" == "start" ] ; then
     exit 0
 else
     echo "valid option is start only "
+    exit 1
+
 fi
