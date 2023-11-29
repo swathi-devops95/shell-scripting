@@ -11,17 +11,17 @@
 
 #case-2
 
-echo "demo on if usage"
+ #echo "demo on if usage"
 
-ACTION=$1                                       #"taking the arg from command"
-if [ "$ACTION" == "start" ] ; then
-    echo "start payment"
-    exit 0
-else
-    echo "valid option is start only "
-    exit 1
+# ACTION=$1                                       #"taking the arg from command"
+# if [ "$ACTION" == "start" ] ; then
+#     echo "start payment"
+#     exit 0
+# else
+#     echo "valid option is start only "
+#     exit 1
 
-fi
+# fi
 
 
 #case-3
