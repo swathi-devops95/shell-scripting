@@ -24,7 +24,7 @@ ACTION=$1
              ;;
           *)
           echo "valid options are start or stop or restart "
-          echo "example usage :bsh scriptname stop "
+          echo -e "example usage :\n \tbsh scriptname stop "
           ;;
 esac        
 
