@@ -11,7 +11,7 @@
 
 
 
-case $ ACTION in
+case $ACTION in
        start)
             echo "starting payment service"
             ;;
