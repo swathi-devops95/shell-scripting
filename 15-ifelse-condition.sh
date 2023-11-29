@@ -33,8 +33,8 @@ if [ "$ACTION" == "start" ] ; then
     exit 0
 
 elif  [ "$ACTION" == "stop" ] ; then
-        echo -e "\e[32m stop payment \e[0m"
-        exit 1
+        echo -e "\e[32m stop payment \e[0m
+        
 
  elif  [ "$ACTION" == "restart" ] ; then
         echo -e "\e[33m restart payment \e[0m"
