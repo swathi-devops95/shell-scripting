@@ -36,13 +36,13 @@ else if [ "$ACTION" == "stop" ] ; then
         echo "stop payment"
         exit 1
 
- else     if[ "$ACTION"== "restart" ] ; then
+ else if [ "$ACTION"== "restart" ] ; then
         echo "restart payment"
         exit 2
 
 
 else 
         echo -e "\e[32m valid options are start or stop or restart \e[0m"
+        echo -e "\e[33m example usage \e[0m :\n \t bash scriptname stop "
         exit 3
-        
     fi
