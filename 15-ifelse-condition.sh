@@ -29,15 +29,15 @@ echo "demo on if usage"
 
 ACTION=$1
 if [ "$ACTION" == "start" ] ; then
-    echo "start payment"
+    echo -e "\e[31m start payment \e[0m"
     exit 0
 
 elif  [ "$ACTION" == "stop" ] ; then
-        echo "stop payment"
+        echo -e "\e[32m stop payment \e [0m"
         exit 1
 
  elif  [ "$ACTION" == "restart" ] ; then
-        echo "restart payment"
+        echo -e "\e[33m restart payment \e[0m"
         exit 2
 
 
