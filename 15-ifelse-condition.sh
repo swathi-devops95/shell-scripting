@@ -43,6 +43,6 @@ else if [ "$ACTION" == "stop" ] ; then
 
 else 
         echo -e "\e[32m valid options are start or stop or restart \e[0m"
-        echo -e "\e[33m example usage \e[0m :\n \t bash scriptname stop "
+        echo -e "\e[33m example usage \e[0m :\n \t bash scriptname stop \e[0m "
         exit 3
     fi
