@@ -27,7 +27,7 @@ if condition is ideally available in 3 formats :
     
     else    
 
-        command 3
+        command 2
 
     fi 
  
@@ -58,3 +58,5 @@ if condition is ideally available in 3 formats :
 COMMENT
 
 # What is an expression ???  Whenever you're using Operators to perform something, that's referred as an expression.
+
+
