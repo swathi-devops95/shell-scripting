@@ -9,3 +9,16 @@
 #tou take any scripts in the internet you can see extensively $?
 
 # ex:go to terminal ->ls-ltr enter->and type->  echo $? -> enter you can see 0 as a result that means action completed succssfully
+
+
+ 
+# 0         : Global Success
+# 1 - 125   : Some failure from the command 
+# 125+      : System Failure
+
+
+
+# Exit codes also plays a key role in debugging big scripts.
+
+# Ex : If you're having a big script and if your script fails and it's really challenging to figure out the mistake as it makes us to watch over the entie script from the beginning.
+# Instead, we can use exit codes everyWhere to find out where our script failes.
