@@ -24,7 +24,7 @@ ACTION=$1
              ;;
           *)
           echo -e "\e[35m valid options are start or stop or restart \e[0m "
-          echo -e " \e [33m example usage \e [0m" : \n \tbsh scriptname stop "
+          echo -e " \e [33m example usage \e [0m: \n \t bash scriptname stop "
           ;;
 esac        
 
