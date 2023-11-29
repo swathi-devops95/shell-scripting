@@ -36,7 +36,7 @@ elif  [ "$ACTION" == "stop" ] ; then
         echo "stop payment"
         exit 1
 
- elif  [ "$ACTION"== "restart" ] ; then
+ elif  [ "$ACTION" == "restart" ] ; then
         echo "restart payment"
         exit 2
 
