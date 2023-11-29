@@ -12,17 +12,23 @@
 
 ACTION=$1
 
-case $ACTION in
-       start)
+ case $ACTION in
+        start)
             echo "starting payment service"
             ;;
         stop)
-            echo "stopping payment service" 
+             echo "stopping payment service" 
             ;;
-        restart)
-            echo "restarting payment service"
-            ;;
-esac   
+         restart)
+             echo "restarting payment service"
+             ;;
+          *)
+          echo "valid options are start or stop or restart "
+          echo "example usage :bsh scriptname stop "
+          ;;
+esac        
+
+              
 
 # ACTION=$1
 
