@@ -10,7 +10,8 @@
 # esac  
 
 
-ACTION= $1
+ACTION=$1
+
 case $ACTION in
        start)
             echo "starting payment service"
