@@ -17,10 +17,10 @@ ACTION=$1
             echo  -e"\e[32m Starting Payment Service \e[0m"
             ;;
         stop)
-             echo -e"\e[31m Starting Payment Service \e[0m"
+             echo -e"\e[31m Stopping Payment Service \e[0m"
             ;;
          restart)
-             echo -e"\e[33m Starting Payment Service \e[0m"
+             echo -e"\e[33m restarting Payment Service \e[0m"
              ;;
           *)
           echo -e "\e[35m valid options are start or stop or restart \e[0m "
