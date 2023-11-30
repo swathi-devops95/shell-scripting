@@ -3,7 +3,7 @@
 #echo "I am frontend"
 # validate the user who is running the script is a root user or not
 
-USER_ID=$(ud -u)
+USER_ID=$(id -u)
 if [ if $USER_ID -ne 0 ]  then ;
     echo -e "\e[31m script is expected to be executed by the root user or with a sudo privilige \e[0m \n\t Example : sudo bash wrappers.sh frontend"
     exit 1
