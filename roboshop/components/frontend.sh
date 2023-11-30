@@ -13,7 +13,7 @@ fi
 
 
 echo "congfiguring frontend"
-yum install nginx -y  &>>  tmp/frontend.log  
+yum install nginx -y  &>>  /tmp/frontend.log  
 
 # yum install nginx -y
 # systemctl enable nginx
