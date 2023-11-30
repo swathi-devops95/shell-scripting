@@ -12,9 +12,9 @@ fi
 #echo -e "\e[31m Script is expected to executed by the root user or with a sudo privilege \e[0m \n \t Example: \n\t\t sudo bash wrapper.sh frontend"
 
 
-echo "congfiguring frontend"
+# echo "congfiguring frontend"
 echo -e "\e[31m configuring frontend .....! \e[0m \n"
-echo  "installing frontend: "
+echo -e "\e[33m  installing frontend : \e[0m"
 yum install nginx -y  &>>  /tmp/frontend.log  
 
 # yum install nginx -y
