@@ -13,6 +13,8 @@ fi
 
 
 echo "congfiguring frontend"
+echo -e "\e[31m configuring frontend .....! \e[0m \n"
+echo  "installing frontend: "
 yum install nginx -y  &>>  /tmp/frontend.log  
 
 # yum install nginx -y
