@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "I am frontend"
+#echo "I am frontend"
 # validate the user who is running the script is a root user or not
 
 USER_ID=$(id -u)
@@ -13,7 +13,7 @@ fi
 
 
 echo "congfiguring frontend"
-yum install nginx -y
+yum install nginx -y  &>>  tmp/frontend.log  
 
 # yum install nginx -y
 # systemctl enable nginx
