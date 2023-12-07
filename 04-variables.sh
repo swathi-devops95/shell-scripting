@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # What is a variable???
-     #  A variable is something that holds the value which is dyanamic
+     #  A variable is something that holds the value which is "dyanamic"
 # variable is used to declare the values:a,b,c are variables which holds values 10,20,xyz
 
     a=10                                    # a is a integer
@@ -9,7 +9,7 @@
     c=xyz                                   # c is a string.
     x=
 
-# IN LINUX/SHELL SCRIPTING THERE IS NO CONCEPT OF DATATYPES BY DEFAULT EVEYTHING IS A STRING
+# IN LINUX/SHELL SCRIPTING THERE IS NO CONCEPT OF DATATYPES BY DEFAULT EVEYTHING IS A "STRING"
 
 # If your input or variables are having special characters enclose them in double quotes ""
 
@@ -27,8 +27,8 @@ echo $c
 
 echo "printing the value of a : $a"             # $a and ${a} gives tou same result--prefer to use {}
 echo "printing the value of a : ${a}"
-echo "printing thr value of b : ${b}"
-echo "printing thr value of x :${x}"
+echo "printing the value of b : ${b}"
+echo "printing the value of x :${x}"
 
 
 #[]-Square bracket

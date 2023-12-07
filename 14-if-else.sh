@@ -11,12 +11,13 @@ if condition is ideally available in 3 formats :
 1) Simple If :  
 
     if [ expression ]; then
+    
             commands
     fi 
 
     Command are going to be executed only if the expression is true. 
 
-* What will happen if the expression  or false  ? Simple, commands won't be executed.
+* What will happen if the expression  is  false  ? Simple, commands won't be executed.
 
 
 2) If-Else 

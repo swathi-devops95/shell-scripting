@@ -19,4 +19,4 @@ echo $a
 echo $b
 COMMENT
 
-#This is called as multi line comment whatever we have enclosed betweemn    <<COMMENT   COMMENT will be marked as comment
+#This is called as multi line comment whatever we have enclosed betweemn    <<COMMENT   COMMENT will be marked as "comment"

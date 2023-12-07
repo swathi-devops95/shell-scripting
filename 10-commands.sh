@@ -3,8 +3,8 @@
 #There  are four tyoes of commands avialbale
 
 # 1) Binary             (/bin, /sbin)
-                       # /bin-commands which are saved inside bin are regular commands -ex-gotto terminal and type cat you can see-cat is /uer/bin/cat
-                       #/sbin-commands which are sacved in sbin are secure commands that can be invoked only by the root user
+                       # /bin-commands which are saved inside bin are regular commands -ex-gotto terminal and type cat you can see-cat is /user/bin/cat
+                       #/sbin-commands which are saved in sbin are secure commands that can be invoked only by the  "root user"
 
 # 2) Aliases            (Aliases are shortcuts      aliase net ="netstat-tulpn")
 #3)Shell -built in commands         commands comes up with shell
@@ -16,7 +16,7 @@
 #4) Functions                       # Functions are nothing but a set of commands that can be written in a sequence order and can be called n number of times whenever required.
 
 
-# how to declare a function
+# how to declare a function:-
 
 #This is how we declare a function :
 
@@ -30,7 +30,7 @@
 # devops() {
 #            echo    this is aws devops course
 #            echo    the entire course is trained by me
-#            echo    we are going to teach you all market standrds
+#            echo    we are going to teach you all market standards
 #            echo    course tenure is 3 months
 #            echo    all you need to do is hands on practise on daily basis
 # }
