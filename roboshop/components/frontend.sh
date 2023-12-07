@@ -9,11 +9,19 @@ if [ $USER_ID -ne 0 ]  ; then
     exit 1
 fi
 
+stat() {
+if [ $? -eq 0 ] ; then
+    echo -e "\e[32m success \e[0m"
+else
+    echo -e "\e[31m failure \e[0m"
+fi
+}
+
 #echo -e "\e[31m Script is expected to executed by the root user or with a sudo privilege \e[0m \n \t Example: \n\t\t sudo bash wrapper.sh frontend"
 
 
 # echo "congfiguring frontend"
-echo -e "\e[31m configuring frontend .....! \e[0m \n"
+echo -e "\e[31m Configuring frontend .....! \e[0m \n"
 echo -n -e "\e[33m  installing frontend : \e[0m"
 yum install nginx -y  &>>  /tmp/frontend.log  
 
@@ -23,7 +31,7 @@ else
     echo -e "\e[31m failure \e[0m"
 fi
 
-echo -n "starting nginx : "
+echo -n "Starting nginx : "
 systemctl enable nginx
 systemctl start nginx
 
@@ -33,7 +41,7 @@ else
     echo -e "\e[31m failure \e[0m"
 fi
 
-echo -n "downloading frontend component:"
+echo -n "Downloading frontend component:"
 curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/frontend/archive/main.zip"
 
 if [ $? -eq 0 ]; then
