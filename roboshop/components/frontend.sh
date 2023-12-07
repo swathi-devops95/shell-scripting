@@ -38,7 +38,13 @@ stat $?
 
 echo -n "Clean up of frontend :" 
  cd /usr/share/nginx/html
- rm -rf *
+ rm -rf * &>>  /tmp/frontend.log 
+ stat $?
+
+ echo -n "Extracting frontend :"
+ unzip /tmp/frontend.zip  &>>  /tmp/frontend.log
+ stat $?
+
 
 
 
