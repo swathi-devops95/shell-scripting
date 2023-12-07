@@ -3,14 +3,14 @@
 #echo "I am frontend"
 # validate the user who is running the script is a root user or not
 
-USER_ID=$(id -u)
+ USER_ID=$(id -u)
 if [ $USER_ID -ne 0 ]  ; then
     echo -e "\e[31m script is expected to be executed by the root user or with a sudo privilige \e[0m \n\t Example: \n\t\t sudo bash wrappers.sh frontend"
     exit 1
 fi
 
 stat() {
-if [ $? -eq 0 ] ; then
+if [ $1 -eq 0 ] ; then
     echo -e "\e[32m success \e[0m"
 else
     echo -e "\e[31m failure \e[0m"
@@ -24,31 +24,16 @@ fi
 echo -e "\e[31m Configuring frontend .....! \e[0m \n"
 echo -n -e "\e[33m  installing frontend : \e[0m"
 yum install nginx -y  &>>  /tmp/frontend.log  
-
-if [ $? -eq 0 ] ; then
-    echo -e "\e[32m success \e[0m"
-else
-    echo -e "\e[31m failure \e[0m"
-fi
+stat $?
 
 echo -n "Starting nginx : "
 systemctl enable nginx
 systemctl start nginx
-
-if [ $? -eq 0 ]; then
-    echo  -e "\e[32m success \e[0m"
-else
-    echo -e "\e[31m failure \e[0m"
-fi
+stat $?
 
 echo -n "Downloading frontend component:"
 curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/frontend/archive/main.zip"
-
-if [ $? -eq 0 ]; then
-    echo -e "\e[32m success \e[0m"
-else
-    echo -e "\e[31m failure \e[0m"
-fi
+stat $?
 
 # yum install nginx -y
 # systemctl enable nginx
@@ -63,3 +48,54 @@ fi
 # mv static/* .
 # rm -rf frontend-main README.md
 # mv localhost.conf /etc/nginx/default.d/roboshop.conf
+
+
+
+
+
+#  USER_ID=$(id -u)
+# if [ $USER_ID -ne 0 ]  ; then
+#     echo -e "\e[31m script is expected to be executed by the root user or with a sudo privilige \e[0m \n\t Example: \n\t\t sudo bash wrappers.sh frontend"
+#     exit 1
+# fi
+
+# stat() {
+# if [ $? -eq 0 ] ; then
+#     echo -e "\e[32m success \e[0m"
+# else
+#     echo -e "\e[31m failure \e[0m"
+# fi
+# }
+
+# #echo -e "\e[31m Script is expected to executed by the root user or with a sudo privilege \e[0m \n \t Example: \n\t\t sudo bash wrapper.sh frontend"
+
+
+# # echo "congfiguring frontend"
+# echo -e "\e[31m Configuring frontend .....! \e[0m \n"
+# echo -n -e "\e[33m  installing frontend : \e[0m"
+# yum install nginx -y  &>>  /tmp/frontend.log  
+
+# if [ $? -eq 0 ] ; then
+#     echo -e "\e[32m success \e[0m"
+# else
+#     echo -e "\e[31m failure \e[0m"
+# fi
+
+# echo -n "Starting nginx : "
+# systemctl enable nginx
+# systemctl start nginx
+
+# if [ $? -eq 0 ]; then
+#     echo  -e "\e[32m success \e[0m"
+# else
+#     echo -e "\e[31m failure \e[0m"
+# fi
+
+# echo -n "Downloading frontend component:"
+# curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/frontend/archive/main.zip"
+
+# if [ $? -eq 0 ]; then
+#     echo -e "\e[32m success \e[0m"
+# else
+#     echo -e "\e[31m failure \e[0m"
+# fi
