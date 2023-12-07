@@ -14,6 +14,7 @@ if [ $1 -eq 0 ] ; then
     echo -e "\e[32m success \e[0m"
 else
     echo -e "\e[31m failure \e[0m"
+    exit 2
 fi
 }
 
@@ -35,6 +36,22 @@ echo -n "Downloading frontend component:"
 curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/frontend/archive/main.zip"
 stat $?
 
+echo -n "Clean up of frontend :" 
+ cd /usr/share/nginx/html
+ rm -rf *
+
+
+
+
+
+
+
+
+
+
+
+
+
 # yum install nginx -y
 # systemctl enable nginx
 # systemctl start nginx
@@ -52,7 +69,7 @@ stat $?
 
 
 
-
+# INITIAL PROCESS:
 #  USER_ID=$(id -u)
 # if [ $USER_ID -ne 0 ]  ; then
 #     echo -e "\e[31m script is expected to be executed by the root user or with a sudo privilige \e[0m \n\t Example: \n\t\t sudo bash wrappers.sh frontend"
