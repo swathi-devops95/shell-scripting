@@ -24,11 +24,11 @@ fi
 }
 
 echo -n -e "\e[31m  Configuring mongodb .....! \e[0m \n"
- echo -e "Configuring ${COMPONENT} repo"
+ echo  -e "Configuring ${COMPONENT} repo"
 curl -s -o /etc/yum.repos.d/mongodb.repo https://raw.githubusercontent.com/stans-robot-project/mongodb/main/mongo.repo
  stat $?
 
- echo -n -e "Installing ${COMPONENT}:"
+ echo -n  "Installing ${COMPONENT}:"
  yum install -y mongodb-org  &>> ${LOGFILE}
  stat $?
 
