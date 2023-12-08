@@ -24,12 +24,12 @@ fi
 
 
 # echo "congfiguring frontend"
-echo -e "\e[31m Configuring frontend .....! \e[0m \n"
+echo -e "\e[31m  Configuring frontend .....! \e[0m \n"
 echo -n -e "\e[33m  installing frontend : \e[0m"
 yum install nginx -y  &>>  /tmp/frontend.log  
 stat $?
 
-echo -n "Starting nginx : "
+echo -n -e"\e[33m Starting nginx : \e[0m"
 systemctl enable nginx
 systemctl start nginx   &>>  /tmp/frontend.log 
 stat $?
