@@ -7,7 +7,7 @@ set -e
 
  USER_ID=$(id -u)
  COMPONENT=$1
- LOGFILE= "/tmp/frontend.log "
+ LOGFILE= "/tmp/${COMPONENT}.log "
 if [ $USER_ID -ne 0 ]  ; then
     echo -e "\e[31m script is expected to be executed by the root user or with a sudo privilige \e[0m \n\t Example: \n\t\t sudo bash wrappers.sh frontend"
     exit 1
