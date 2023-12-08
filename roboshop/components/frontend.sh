@@ -29,7 +29,7 @@ echo -n -e "\e[33m  installing frontend : \e[0m"
 yum install nginx -y  &>>  /tmp/frontend.log  
 stat $?
 
-echo -n -e"\e[33m Starting nginx : \e[0m"
+echo -n -e "\e[33m Starting nginx : \e[0m"
 systemctl enable nginx
 systemctl start nginx   &>>  /tmp/frontend.log 
 stat $?
