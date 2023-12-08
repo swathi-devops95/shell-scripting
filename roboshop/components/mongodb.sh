@@ -33,7 +33,7 @@ curl -s -o /etc/yum.repos.d/mongodb.repo https://raw.githubusercontent.com/stans
  stat $?
 
  echo -n "Enabling the ${COMPONENT} visibility :"
- sed -ie 's/127.0.0.1/0.0.0.0/g' mongodb.conf
+ sed -ie 's/127.0.0.1/0.0.0.0/g' mongod.conf
  stat $?
 
  echo -n "Starting the ${COMPONENT}:"
