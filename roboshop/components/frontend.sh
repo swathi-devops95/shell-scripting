@@ -25,17 +25,17 @@ fi
 
 # echo "congfiguring frontend"
 echo -e "\e[31m  Configuring ${COMPONENT} .....! \e[0m \n"
-echo -n -e "\e[33m  installing nginx : \e[0m"
+echo -n  "installing nginx : "
 yum install nginx -y  &>>  ${LOGFILE}
 stat $?
 
 echo -n -e "\e[33m  Starting nginx : \e[0m"
-systemctl enable nginx
+systemctl enable nginx  &>>  ${LOGFILE}
 systemctl start nginx   &>>  ${LOGFILE}
 stat $?
 
 echo -n "Downloading ${COMPONENT} component:"
-curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/stans-robot-project/${COMPONENT}/archive/main.zip"
+curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/${COMPONENT}/archive/main.zip"
 stat $?
 
 echo -n "Clean up of ${COMPONENT} :" 
@@ -44,7 +44,7 @@ echo -n "Clean up of ${COMPONENT} :"
  stat $?
 
  echo -n "Extracting ${COMPONENT} :"
- unzip /tmp/frontend.zip  &>> ${LOGFILE}
+ unzip /tmp/${COMPONENT}.zip  &>> ${LOGFILE}
  mv ${COMPONENT}-main/* .
  mv static/* .
  rm -rf ${COMPONENT}-main README.md
