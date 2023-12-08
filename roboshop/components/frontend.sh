@@ -6,6 +6,8 @@ set -e
 # validate the user who is running the script is a root user or not
 
  USER_ID=$(id -u)
+ COMPONENT=$1
+ LOGFILE= "/tmp/frontend.log "
 if [ $USER_ID -ne 0 ]  ; then
     echo -e "\e[31m script is expected to be executed by the root user or with a sudo privilige \e[0m \n\t Example: \n\t\t sudo bash wrappers.sh frontend"
     exit 1
@@ -24,39 +26,39 @@ fi
 
 
 # echo "congfiguring frontend"
-echo -e "\e[31m  Configuring frontend .....! \e[0m \n"
-echo -n -e "\e[33m  installing frontend : \e[0m"
-yum install nginx -y  &>>  /tmp/frontend.log  
+echo -e "\e[31m  Configuring ${COMPONENT} .....! \e[0m \n"
+echo -n -e "\e[33m  installing nginx : \e[0m"
+yum install nginx -y  &>>  ${LOGFILE}
 stat $?
 
-echo -n -e "\e[33m Starting nginx : \e[0m"
+echo  -e "\e[33m  Starting nginx : \e[0m"
 systemctl enable nginx
-systemctl start nginx   &>>  /tmp/frontend.log 
+systemctl start nginx   &>>  ${LOGFILE}
 stat $?
 
-echo -n "Downloading frontend component:"
+echo -n "Downloading ${COMPONENT} component:"
 curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/frontend/archive/main.zip"
 stat $?
 
-echo -n "Clean up of frontend :" 
+echo -n "Clean up of ${COMPONENT} :" 
  cd /usr/share/nginx/html
- rm -rf * &>>  /tmp/frontend.log 
+ rm -rf * &>>  ${LOGFILE}
  stat $?
 
- echo -n "Extracting frontend :"
- unzip /tmp/frontend.zip  &>>  /tmp/frontend.log
+ echo -n "Extracting ${COMPONENT} :"
+ unzip /tmp/frontend.zip  &>> ${LOGFILE}
  stat $?
 
- echo -n "Sorting thr frontenf files:"
+ echo -n "Sorting the ${COMPONENT} files:"
  mv frontend-main/* .
  mv static/* .
- rm -rf frontend-main README.md
+ rm -rf ${COMPONENT}-main README.md
  mv localhost.conf /etc/nginx/default.d/roboshop.conf
  stat $?
 
- echo -n "Restarting frontend:"
- systemctl daemon-reload   &>>  /tmp/frontend.log
- systemctl restart nginx  &>>  /tmp/frontend.log
+ echo -n "Restarting ${COMPONENT}:"
+ systemctl daemon-reload   &>> ${LOGFILE}
+ systemctl restart nginx   &>> ${LOGFILE}
  stat $?
 
 
