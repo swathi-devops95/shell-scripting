@@ -31,7 +31,7 @@ stat $?
 
 echo -n "Starting nginx : "
 systemctl enable nginx
-systemctl start nginx
+systemctl start nginx   &>>  /tmp/frontend.log 
 stat $?
 
 echo -n "Downloading frontend component:"
