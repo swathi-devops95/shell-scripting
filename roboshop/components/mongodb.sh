@@ -11,7 +11,7 @@ if [ $USER_ID -ne 0 ]  ; then
 fi
 
 stat() {
-if [ $1 -eq 0 ] ; then
+if [ $ -eq 0 ] ; then
     echo -e "\e[32m success \e[0m"
 else
     echo -e "\e[31m failure \e[0m"
@@ -22,18 +22,18 @@ fi
 
 echo -e "\e[31m  Configuring mongodb .....! \e[0m \n"
 
-echo -e "Configuring mongodb repo"
-curl -s -o /etc/yum.repos.d/mongodb.repo https://raw.githubusercontent.com/stans-robot-project/mongodb/main/mongo.repo
-stat $?
+# echo -e "Configuring mongodb repo"
+# curl -s -o /etc/yum.repos.d/mongodb.repo https://raw.githubusercontent.com/stans-robot-project/mongodb/main/mongo.repo
+# stat $?
 
-echo -e "Installing mongodb"
-yum install -y mongodb-org  &>> /tmp/mongodb.log
-stat $?
+# echo -e "Installing mongodb"
+# yum install -y mongodb-org  &>> /tmp/mongodb.log
+# stat $?
 
-echo -e "Starting mongodb :"
-systemctl enable mongodb  &>> /tmp/mongodb.log
-systemctl start mongodb  &>> /tmp/mongodb.log
-stat $?
+# echo -e "Starting mongodb :"
+# systemctl enable mongodb  &>> /tmp/mongodb.log
+# systemctl start mongodb  &>> /tmp/mongodb.log
+# stat $?
 
 
 
