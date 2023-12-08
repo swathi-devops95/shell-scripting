@@ -45,9 +45,6 @@ echo -n "Clean up of ${COMPONENT} :"
 
  echo -n "Extracting ${COMPONENT} :"
  unzip /tmp/frontend.zip  &>> ${LOGFILE}
- stat $?
-
- echo -n "Sorting the ${COMPONENT} files:"
  mv ${COMPONENT}-main/* .
  mv static/* .
  rm -rf ${COMPONENT}-main README.md
