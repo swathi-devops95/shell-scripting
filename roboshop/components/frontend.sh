@@ -52,7 +52,7 @@ echo -n "Clean up of ${COMPONENT} :"
  echo -n "Sorting the ${COMPONENT} files:"
  mv frontend-main/* .
  mv static/* .
- rm -rf ${COMPONENT}-main README.md
+ rm -rf ${COMPONENT} -main README.md
  mv localhost.conf /etc/nginx/default.d/roboshop.conf
  stat $?
 
