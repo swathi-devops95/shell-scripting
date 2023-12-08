@@ -31,7 +31,7 @@ echo -n -e "\e[33m  installing nginx : \e[0m"
 yum install nginx -y  &>>  ${LOGFILE}
 stat $?
 
-echo  -e "\e[33m  Starting nginx : \e[0m"
+echo -n -e "\e[33m  Starting nginx : \e[0m"
 systemctl enable nginx
 systemctl start nginx   &>>  ${LOGFILE}
 stat $?
