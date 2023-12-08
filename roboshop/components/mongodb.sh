@@ -4,10 +4,9 @@
 # validate the user who is running the script is a root user or not
 
  USER_ID=$(id -u)
- COMPONENT=mongodb
- LOGFILE="/tmp/${COMPONENT}.log"
+ 
 if [ $USER_ID -ne 0 ]  ; then
-    echo -e "\e[31m script is expected to be executed by the root user or with a sudo privilige \e[0m \n\t Example: \n\t\t sudo bash wrappers.sh frontend"
+    echo -e "\e[31m script is expected to be executed by the root user or with a sudo privilige \e[0m \n\t Example: \n\t\t sudo bash wrappers.sh mongodb"
     exit 1
 fi
 
@@ -21,19 +20,19 @@ fi
 
 }
 
-echo -e "\e[31m  Configuring ${COMPONENT} .....! \e[0m \n"
+echo -e "\e[31m  Configuring mongodb .....! \e[0m \n"
 
-echo -e "Configuring ${COMPONENT} repo"
+echo -e "Configuring mongodb repo"
 curl -s -o /etc/yum.repos.d/mongodb.repo https://raw.githubusercontent.com/stans-robot-project/mongodb/main/mongo.repo
 stat $?
 
-echo -e "Installing ${COMPONENT}"
-yum install -y mongodb-org  &>>  ${LOGFILE}
+echo -e "Installing mongodb"
+yum install -y mongodb-org  &>> /tmp/mongodb.log
 stat $?
 
-echo -e "Starting ${COMPONENT} :"
-systemctl enable ${COMPONENT}   &>> ${LOGFILE}
-systemctl start ${COMPONENT}    &>> ${LOGFILE}
+echo -e "Starting mongodb :"
+systemctl enable mongodb  &>> /tmp/mongodb.log
+systemctl start mongodb  &>> /tmp/mongodb.log
 stat $?
 
 
