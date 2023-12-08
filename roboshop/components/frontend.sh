@@ -7,7 +7,7 @@ set -e
 
  USER_ID=$(id -u)
  COMPONENT=$1
- LOGFILE="/tmp/${COMPONENT}.log "
+ LOGFILE="/tmp/${COMPONENT}.log"
 if [ $USER_ID -ne 0 ]  ; then
     echo -e "\e[31m script is expected to be executed by the root user or with a sudo privilige \e[0m \n\t Example: \n\t\t sudo bash wrappers.sh frontend"
     exit 1
@@ -20,10 +20,8 @@ else
     echo -e "\e[31m failure \e[0m"
     exit 2
 fi
+
 }
-
-#echo -e "\e[31m Script is expected to executed by the root user or with a sudo privilege \e[0m \n \t Example: \n\t\t sudo bash wrapper.sh frontend"
-
 
 # echo "congfiguring frontend"
 echo -e "\e[31m  Configuring ${COMPONENT} .....! \e[0m \n"
@@ -50,7 +48,7 @@ echo -n "Clean up of ${COMPONENT} :"
  stat $?
 
  echo -n "Sorting the ${COMPONENT} files:"
- mv frontend-main/* .
+ mv ${COMPONENT}-main/* .
  mv static/* .
  rm -rf ${COMPONENT}-main README.md
  mv localhost.conf /etc/nginx/default.d/roboshop.conf
