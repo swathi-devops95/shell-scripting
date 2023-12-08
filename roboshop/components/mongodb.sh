@@ -23,8 +23,8 @@ fi
 
 }
 
-echo  -e "\e[31m  Configuring mongodb .....! \e[0m \n"
-echo  -n "Configuring ${COMPONENT} repo : "
+echo -e "\e[31m  Configuring mongodb .....! \e[0m \n"
+echo -n "Configuring ${COMPONENT} repo : "
 curl -s -o /etc/yum.repos.d/mongodb.repo https://raw.githubusercontent.com/stans-robot-project/mongodb/main/mongo.repo
  stat $?
 
@@ -32,6 +32,15 @@ curl -s -o /etc/yum.repos.d/mongodb.repo https://raw.githubusercontent.com/stans
  yum install -y mongodb-org  &>> ${LOGFILE}
  stat $?
 
+ echo -n "Enabling the ${COMPONENT} visibility :"
+ sed -ie 's/127.0.0.1/0.0.0.0/g' /etc/mongod.conf
+ stat $?
+
+ echo -n "Starting the ${COMPONENT}:"
+ systemctl enable mongodb   &>> ${LOGFILE}
+ systemctl start mongodb    &>> ${LOGFILE}
+
+stat $?
 # echo -e "Starting mongodb :"
 # systemctl enable mongodb  &>> /tmp/mongodb.log
 # systemctl start mongodb  &>> /tmp/mongodb.log
