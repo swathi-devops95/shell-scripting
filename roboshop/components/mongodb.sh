@@ -23,7 +23,7 @@ fi
 
 }
 
-echo -e "\e[31m  Configuring mongodb .....! \e[0m \n"
+echo -e "\e[31m  Configuring ${COMPONENT} .....! \e[0m \n"
 echo -n "Configuring ${COMPONENT} repo : "
 curl -s -o /etc/yum.repos.d/mongodb.repo https://raw.githubusercontent.com/stans-robot-project/mongodb/main/mongo.repo
  stat $?
@@ -56,6 +56,10 @@ curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/stans-robot-project/${CO
  mongo < catalogue.js
  mongo < users.js
  stat $?
+
+ echo -e "\e[31m  ${COMPONENT} Installation completed .....! \e[0m \n"
+
+
 
 
 

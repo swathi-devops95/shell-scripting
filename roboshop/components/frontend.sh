@@ -56,6 +56,8 @@ echo -n "Clean up of ${COMPONENT} :"
  systemctl restart nginx   &>> ${LOGFILE}
  stat $?
 
+ echo -e "\e[31m  ${COMPONENT} Installation is completed  \e[0m \n"
+
 
 
 
