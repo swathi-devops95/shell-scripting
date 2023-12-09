@@ -13,18 +13,21 @@ if [ $USER_ID -ne 0 ] ; then
 fi
 
 stat() {
-    if [ $1 -eq 0 ]; then
-        echo -e "\e[32m sussess \e[0m"
-    else
-        echo -e "\e[31m failure \e[0m"
-        exit 2
-    fi
+if [ $1 -eq 0 ] ; then
+    echo -e "\e[32m success \e[0m"
+else
+    echo -e "\e[31m failure \e[0m"
+    exit 2
+fi
+
 }
+
+
 
 echo -e "\e[31m Configuring ${COMPONENT}......! \e[0m \n"
 echo -n "configuring ${COMPONENT} repo : "
- yum install https://rpm.nodesource.com/pub_16.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm -y      &>> ${LOGFILE}
-stat $1
+yum install https://rpm.nodesource.com/pub_16.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm -y    &>> ${LOGFILE}
+stat $?
 
 echo -e "Installing nodejs :"
 yum install nodejs -y       &>> ${LOGFILE}
