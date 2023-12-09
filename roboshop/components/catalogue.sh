@@ -40,6 +40,16 @@ echo -n "Creating Application User Account :"
 useradd roboshop
 stat $?
 
+echo -n "Downloading the ${COMPONENT} : "
+$ curl -s -L -o /tmp/${CATALOGUE}.zip "https://github.com/stans-robot-project/${CATALOGUE}/archive/main.zip"
+stat $?
+
+echo -n "Copying the ${COMPONENT} to ${APPUSER} home directory"
+cd /home/${APPUSER}/
+rm -rf ${COMPONENT}   &>> ${LOGFILE}
+unzip -o /tmp/${COMPONENT}.zip   &>> ${LOGFILE}             #-o is used to override if the file already exists it will override
+
+
 
 
 
