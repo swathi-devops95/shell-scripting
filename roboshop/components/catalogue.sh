@@ -5,6 +5,8 @@
 USER_ID=$(id -u)
 COMPONENT=catalogue
 LOGFILE="/tmp/${COMPONENT}.log"
+APPUSER="roboshop"
+
 if [ $USER_ID -ne 0 ] ; then
     echo -e "\e[31m script is expected to be executed by root or with a sudo priviliged user \e[0m \n\t Example: \n\t sudo bash wrappers.sh catalogue "
     exit 1
@@ -19,7 +21,18 @@ stat() {
     fi
 }
 
-echo -e "\e[configuring ${COMPONENT}......! \e[0m"
+echo -e "\e[31m Configuring ${COMPONENT}......! \e[0m"
+echo -n "configuring ${COMPONENT} repo : "
+ yum install https://rpm.nodesource.com/pub_16.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm -y
+stat $1
+
+echo -e "Installing nodejs :"
+yum install nodejs -y       &>> ${LOGFILE}
+stat $?
+
+echo -n "Creating Application User Account :"
+useradd roboshop
+stat $?
 
 
 
@@ -41,14 +54,6 @@ echo -e "\e[configuring ${COMPONENT}......! \e[0m"
 
 
 
-
-
-
-
-
-
-
-# yum install https://rpm.nodesource.com/pub_16.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm -y
 # yum install nodejs -y  
 
 #  USER_ID=$(id -u)
