@@ -8,7 +8,7 @@ LOGFILE="/tmp/${COMPONENT}.log"
 APPUSER="roboshop"
 
 if [ $USER_ID -ne 0 ] ; then
-    echo -e "\e[31m script is expected to be executed by root or with a sudo priviliged user \e[0m \n\t Example: \n\t sudo bash wrappers.sh catalogue "
+    echo -e "\e[31m script is expected to be executed by root or with a sudo priviliged user \e[0m \n\t Example: \n\t sudo bash wrappers.sh catalogue"
     exit 1
 fi
 
@@ -26,11 +26,11 @@ fi
 echo -e "\e[35m Configuring ${COMPONENT}......! \e[0m \n"
 
 echo -n "configuring ${COMPONENT} repo : "
-curl --silent --location https://rpm.nodesource.com/setup_16.x |bash -    &>> ${LOGFILE}
+curl --silent --location https://rpm.nodesource.com/setup_16.x |bash -   &>> ${LOGFILE}
 stat $?
 
 echo -n -e "\e[33m Installing nodejs : \e[0m"
-yum install nodejs -y       &>> ${LOGFILE}
+yum install nodejs -y    &>> ${LOGFILE}
 stat $?
 
 id ${APPUSER}    &>> ${LOGFILE}
@@ -38,6 +38,7 @@ if [ $? -ne 0 ]; then
 echo -n "Creating Application User Account :"
 useradd roboshop
 stat $?
+fi
 
 echo -n "Downloading the ${COMPONENT} : "
 $ curl -s -L -o /tmp/${CATALOGUE}.zip "https://github.com/stans-robot-project/${CATALOGUE}/archive/main.zip"
