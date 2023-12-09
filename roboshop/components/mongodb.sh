@@ -44,7 +44,7 @@ stat $?
 
 echo -n "Downloading the ${COMPONENT} schema : "
 curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/stans-robot-project/${COMPONENT}/archive/main.zip"
- stat $?
+stat $?
 
  echo -n "Extracting the ${COMPONENT} schema :"
  cd /tmp
@@ -53,8 +53,8 @@ curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/stans-robot-project/${CO
 
  echo -n "Injecting ${COMPONENT} schema :"
  cd ${COMPONENT}-main
- mongo < catalogue.js
- mongo < users.js
+ mongo < catalogue.js            &>> ${LOGFILE}
+ mongo < users.js                &>> ${LOGFILE}
  stat $?
 
  echo -e "\e[31m  ${COMPONENT} Installation completed .....! \e[0m \n"
@@ -75,40 +75,6 @@ curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/stans-robot-project/${CO
 
 
 
-
-
-
-
-
-
-
-# echo -e "Starting mongodb :"
-# systemctl enable mongodb  &>> /tmp/mongodb.log
-# systemctl start mongodb  &>> /tmp/mongodb.log
-# stat $?
-
-
-
-
-
-
-
-
-# yum install -y mongodb-org
-# systemctl enable mongod
-# systemctl start mongod
-# vim /etc/mongod.conf
-# systemctl restart mongod
-
-# Download the schema and inject it.
- 
-# curl -s -L -o /tmp/mongodb.zip "https://github.com/stans-robot-project/mongodb/archive/main.zip"
-
-# cd /tmp
-# unzip mongodb.zip
-# cd mongodb-main
-# mongo < catalogue.js
-# mongo < users.js
 
 
 
