@@ -23,7 +23,6 @@ fi
 }
 
 
-
 echo -e "\e[35m Configuring ${COMPONENT}......! \e[0m \n"
 
 echo -n "configuring ${COMPONENT} repo : "
@@ -47,36 +46,4 @@ stat $?
 echo -n "Copying the ${COMPONENT} to ${APPUSER} home directory"
 cd /home/${APPUSER}/
 rm -rf ${COMPONENT}   &>> ${LOGFILE}
-unzip -o /tmp/${COMPONENT}.zip   &>> ${LOGFILE}             #-o is used to override if the file already exists it will override
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                                                   
-
-
-
-
-    
+unzip -o /tmp/${COMPONENT}.zip   &>> ${LOGFILE}
