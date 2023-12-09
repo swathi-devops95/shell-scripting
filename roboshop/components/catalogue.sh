@@ -34,6 +34,8 @@ echo -n -e "\e[33m Installing nodejs : \e[0m"
 yum install nodejs -y       &>> ${LOGFILE}
 stat $?
 
+id ${APPUSER}
+if [ $? -ne 0 ]; then
 echo -n "Creating Application User Account :"
 useradd roboshop
 stat $?
