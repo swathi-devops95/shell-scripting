@@ -25,8 +25,9 @@ fi
 
 
 echo -e "\e[31m Configuring ${COMPONENT}......! \e[0m \n"
+
 echo -n "configuring ${COMPONENT} repo : "
-yum install https://rpm.nodesource.com/pub_16.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm -y    &>> ${LOGFILE}
+curl --silent --location https://rpm.nodesource.com/setup_16.x |bash -    &>> ${LOGFILE}
 stat $?
 
 echo -e "Installing nodejs :"
