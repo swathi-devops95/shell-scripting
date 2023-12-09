@@ -2,7 +2,7 @@
 
 echo "I am catalogue"
 
-USER_ID=$(ud -u)
+USER_ID=$(id -u)
 COMPONENT=catalogue
 LOGFILE="\tmp\${COMPONENT}.log"
 if [$USER_ID -ne 0] ; then
