@@ -35,7 +35,7 @@ curl -L https://raw.githubusercontent.com/stans-robot-project/redis/main/${COMPO
  stat $?
 
  echo -n "Enabling the ${COMPONENT} visibility :"
- sed  -ie 's/127.0.0.1/0.0.0.0/g' /etc/${COMPONENT}.conf
+ sed  -ie 's/127.0.0.1/0.0.0.0/g' /etc/${COMPONENT}/${COMPONENT}.conf
  stat $?
 
  echo -n "Starting the ${COMPONENT}:"
