@@ -24,13 +24,13 @@ fi
 
 
 
-echo -e "\e[31m Configuring ${COMPONENT}......! \e[0m \n"
+echo -e "\e[35m Configuring ${COMPONENT}......! \e[0m \n"
 
 echo -n "configuring ${COMPONENT} repo : "
 curl --silent --location https://rpm.nodesource.com/setup_16.x |bash -    &>> ${LOGFILE}
 stat $?
 
-echo -e "Installing nodejs :"
+echo -n -e "\e[33m Installing nodejs : \e[0m"
 yum install nodejs -y       &>> ${LOGFILE}
 stat $?
 
