@@ -55,7 +55,7 @@ curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/stans-robot-project/${CO
  cd ${COMPONENT}-main
  mongo < catalogue.js
  mongo < users.js
- STAT $?
+ stat $?
 
 
 
