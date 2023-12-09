@@ -26,7 +26,7 @@ fi
 
 echo -e "\e[31m  Configuring ${COMPONENT} .....! \e[0m \n"
 echo -n "Configuring ${COMPONENT} repo : "
-curl -L https://raw.githubusercontent.com/stans-robot-project/redis/main/${COMPONENT}.repo -o /etc/yum.${COMPONENT}.d/redis.repo
+curl -L https://raw.githubusercontent.com/stans-robot-project/redis/main/${COMPONENT}.repo -o /etc/yum.${COMPONENT}.d/redis.repo    &>> ${LOGFILE}
 
  stat $?
 
