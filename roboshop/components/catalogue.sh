@@ -59,5 +59,19 @@ echo -n "Generating the ${COMPONENT} artifacts :"
 cd /home/${APPUSER}/${COMPONENT}/
 npm install    &>> ${LOGFILE}
 stat $?
- 
+
+echo -n "Configuring the ${COMPONENT} system file : "
+sed -ie 's/MONGO_DNSNAME/172.31.24.102/'  /home/${APPUSER}/${COMPONENT}/systemd.service
+mv /home/${APPUSER}/${COMPONENT}/systemd.service /etc/systemd/system/${COMPONENT}.service
+stat $?
+
+echo -n "Starting the ${COMPONENT} SERVICE :"
+systemctl daemon-reload
+systemctl enable ${COMPONENT}   &>> ${LOGFILE}
+systemctl restart ${COMPONENT}  &>> ${LOGFILE}
+stat $?
+
+ echo -e "\e[32m  ${COMPONENT} Installation is completed  \e[0m \n"
+
+
 
