@@ -4,11 +4,12 @@
 
 
 USER_ID=$(id -u)
- COMPONENT=mysql
- source components/common.sh
- echo -e "\e[32m  ${COMPONENT} Installation is completed  \e[0m \n"
+COMPONENT=mysql
+LOGFILE="/tmp/${COMPONENT}.log"
+ #source components/common.sh
+# echo -e "\e[32m  ${COMPONENT} Installation is completed  \e[0m \n"
 
- LOGFILE="/tmp/${COMPONENT}.log"
+ 
 
  
 if [ $USER_ID -ne 0 ]  ; then
