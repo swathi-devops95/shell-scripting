@@ -73,7 +73,7 @@ stat $?
    stat $?
 
    echo -n "injecting the schema:"
-   cd /tmp/ ${COMPONENT}-main
+   cd  ${COMPONENT}-main
    mysql -u root -pRoboShop@1 <shipping.sql     &>> ${LOGFILE} 
    stat $?
 
