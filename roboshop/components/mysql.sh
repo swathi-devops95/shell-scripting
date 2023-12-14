@@ -66,7 +66,7 @@ stat $?
 
    echo -n "injecting the schema:"
    cd /tmp/ ${COMPONENT}-main
-   mysql -u root -pRoboShop@1 <shipping.sql     &>> ${LOGFILE} 
+   mysql -uroot -pRoboShop@1 <shipping.sql     &>> ${LOGFILE} 
    stat $?
 
     echo -e "\e[32m  ${COMPONENT} Installation is completed  \e[0m \n"
