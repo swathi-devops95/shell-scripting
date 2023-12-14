@@ -50,7 +50,7 @@ stat $?
 #This should happens only once and that tofor the fiest time,whenit runs for the second time job fails
 #we need to ensure that this runs only once
    echo "show databases;" | mysql -uroot -pRoboShop@1         &>> ${LOGFILE}  
-   if [$1 -ne 0]; then
+   if [ $? -ne 0 ]; then
    echo -n "performing default password reset of root account :"
    echo "ALTER USER 'root'@'localhost' IDENTIFIED BY 'RoboShop@1'" | mysql  --connect-expired-password  -uroot -p$DEFAULT_ROOT_PASSWORD        &>> ${LOGFILE}  
    stat $?
