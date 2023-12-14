@@ -35,17 +35,11 @@ useradd roboshop
 stat $?
 fi
 }
-DOWNLOAD(){
-    echo -n "Downloading the ${COMPONENT} : "
-curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/stans-robot-project/${COMPONENT}/archive/main.zip"
-stat $?
-}
 
 
 #Download and Extract:
-EXTRACT() {
+DOWNLOAD_AND_EXTRACT() {
 
- DOWNLOAD    #DOWNLOAD THE COMPONENT
 echo -n "Downloading the ${COMPONENT} : "
 curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/stans-robot-project/${COMPONENT}/archive/main.zip"
 stat $?
@@ -107,7 +101,7 @@ CREATE_USER                 #Calls CREATE_USER fuynction that creates user accou
                             #WE NEED TO CREATE A USER ACCOUNT CALLED ROBOSHOP SO THAT WHY WE CALLED CREATE_USER FUNCTION GERE
 
 
-EXTRACT        #calls DOWNLOAD_AND_EXTRACT function that download and extract components
+DOWNLOAD_AND_EXTRACT     #calls DOWNLOAD_AND_EXTRACT function that download and extract components
 
 echo -n "Generating the ${COMPONENT} artifacts :"
 cd /home/${APPUSER}/${COMPONENT}/

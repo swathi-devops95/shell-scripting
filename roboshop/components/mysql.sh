@@ -62,7 +62,15 @@ stat $?
    echo "uninstall plugin validate_password" |  mysql -uroot -pRoboShop@1         &>> ${LOGFILE} 
    stat $?
    fi
-   DOWNLOAD  #DOWNLOADS AND  MYSQL SCHEMA
+  
+   echo -n " Downloading the ${COMPONENT} schema:"
+   curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/stans-robot-project/${COMPONENT}/archive/main.zip"
+   stat $?
+
+   echo -n " Extracting the ${COMPONENT} schema:"
+   cd /tmp
+   unzip -o /tmp/${COMONENT}.zip
+   stat $?
 
    echo -n "injecting the schema:"
    cd /tmp/ ${COMPONENT}-main
