@@ -3,11 +3,11 @@
 #echo "I am mysql"
 
 
-USER_ID=$(id -u)
+#USER_ID=$(id -u)
 COMPONENT=mysql
-LOGFILE="/tmp/${COMPONENT}.log"
- #source components/common.sh
-# echo -e "\e[32m  ${COMPONENT} Installation is completed  \e[0m \n"
+#LOGFILE="/tmp/${COMPONENT}.log"
+ source components/common.sh
+ #echo -e "\e[32m  ${COMPONENT} Installation is completed  \e[0m \n"
 
  
 
@@ -62,6 +62,15 @@ stat $?
    echo "uninstall plugin validate_password" |  mysql -uroot -pRoboShop@1         &>> ${LOGFILE} 
    stat $?
    fi
+   DOWNLOAD  #DOWNLOADS AND  MYSQL SCHEMA
+
+   echo -n "injecting the schema:"
+   cd /tmp/ ${COMPONENT}-main
+   mysql -u root -pRoboShop@1 <shipping.sql     &>> ${LOGFILE} 
+   stat $?
+
+    echo -e "\e[32m  ${COMPONENT} Installation is completed  \e[0m \n"
+
 
 
 
