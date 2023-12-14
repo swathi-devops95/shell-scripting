@@ -56,7 +56,7 @@ stat $?
    stat $?
    fi
 
-
+  echo "show plugins;" | mysql -uroot -pRoboShop@1         &>> ${LOGFILE} 
    echo -n "uninstalling password-validate plugin :"
    echo "uninstall plugin validate_password" |  mysql -uroot -pRoboShop@1         &>> ${LOGFILE} 
    stat $?
