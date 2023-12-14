@@ -38,6 +38,15 @@ stat $?
  stat $?
 
 
+ echo -n "starting ${COMONENT} :"
+   systemctl enable mysqld           &>> ${LOGFILE}
+   systemctl start mysqld             &>> ${LOGFILE}
+   stat $?
+
+
+
+
+
 
 
 
