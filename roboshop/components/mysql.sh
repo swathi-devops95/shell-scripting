@@ -69,15 +69,15 @@ stat $?
 
    echo -n " Extracting the ${COMPONENT} schema:"
    cd /tmp
-   unzip -o /tmp/${COMONENT}.zip
+   unzip -o /tmp/${COMONENT}.zip     &>> ${LOGFILE} 
    stat $?
 
    echo -n "injecting the schema:"
-   cd  ${COMPONENT}-main
+   cd ${COMPONENT}-main
    mysql -u root -pRoboShop@1 <shipping.sql     &>> ${LOGFILE} 
    stat $?
 
-    echo -e "\e[32m  ${COMPONENT} Installation is completed  \e[0m \n"
+ echo -e "\e[32m  ${COMPONENT} Installation is completed  \e[0m \n"
 
 
 # cd /tmp
