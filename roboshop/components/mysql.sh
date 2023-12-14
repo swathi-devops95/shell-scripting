@@ -44,7 +44,7 @@ stat $?
    stat $?
 
    echo -n "Extracting the default mysql root password :"
-   DEFAULT_ROOT_PASSWORD=$(sudo grep 'temporary password' /var/log/mysqld.log | awk -F " " '{print $NF}')
+   DEFAULT_ROOT_PASSWORD=$( grep 'temporary password' /var/log/mysqld.log | awk -F " " '{print $NF}')
    stat$?
 
 #This should happens only once and that tofor the fiest time,whenit runs for the second time job fails
