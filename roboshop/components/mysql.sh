@@ -48,8 +48,9 @@ stat $?
    stat$?
 
 #This should happens only once and that tofor the fiest time,whenit runs for the second time job fails
+#we need to ensure that this runs only once
    echo -n "performing default password reset of root account :"
-   echo "ALTER USER 'root'@'localhost' IDENTIFIED BY 'RoboShop@1'" | mysql  --connect -expired-password  -uroot -p$DEFAULT_ROOT_PASSWORD        &>> ${LOGFILE}  
+   echo "ALTER USER 'root'@'localhost' IDENTIFIED BY 'RoboShop@1'" | mysql  --connect-expired-password  -uroot -p$DEFAULT_ROOT_PASSWORD        &>> ${LOGFILE}  
    stat $?
 
 
