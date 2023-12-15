@@ -12,7 +12,7 @@
 
 
   # \n : this indicated a new line.
-  echo -e  "swathidevops"
+  echo -e  "swathi\ndevops"
   #   swathi
   #   devops
 
