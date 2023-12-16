@@ -16,7 +16,8 @@
 # How can i print the value of a variable????
       #  Using special character we are going to print the value of a variable.
 
-# $: this is the special character used to print the value of a variable
+# $: this is the special character used to print the value of a "variable"
+# Whenever you are using special characters you need to enclose them in "" 
 
 # echo a    (gives you a)
 # echo $a   (gives u value assigned to a)
