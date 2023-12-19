@@ -1,13 +1,14 @@
-#!/bib/bash
+#!/bin/bash
 
-#There  are four tyoes of commands avialbale
+#There  are four types of commands avialbale:
 
 # 1) Binary             (/bin, /sbin)
-                       # /bin-commands which are saved inside bin are regular commands -ex-gotto terminal and type cat you can see-cat is /user/bin/cat
-                       #/sbin-commands which are saved in sbin are secure commands that can be invoked only by the  "root user"
+                       # /bin-commands which are saved inside bin are regular commands -ex-go to terminal and  (type cat   enter) you can see->cat is /user/bin/cat
+                                                                                                               # (type yum  enter) you can see->yum is /user/bin/yum
+                       #/sbin-  (secure bin) commands which are saved in sbin are secure commands that can be invoked only by the  "root user"
 
 # 2) Aliases            (Aliases are shortcuts      aliase net ="netstat-tulpn")
-#3)Shell -built in commands         commands comes up with shell
+#3)Shell -built in commands         commands comes up with "shell"
                                     # ex- got to terminal
                                     #     type cd  -> enter  ->cd is a shell builtin
                                     #     type echo -> enter -> echo is a builtin
