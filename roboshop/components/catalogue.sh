@@ -7,7 +7,7 @@ source components/common.sh
 
 NODEJS      #Calling nodejs function
 
-echo -e "\e[32m  ${COMPONENT} Installation is completed  \e[0m \n"
+echo -e "\e[35m  ${COMPONENT} Installation is completed  \e[0m \n"
 
 
 
