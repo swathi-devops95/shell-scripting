@@ -51,6 +51,11 @@ echo -n "Clean up of ${COMPONENT} :"
  mv localhost.conf /etc/nginx/default.d/roboshop.conf
  stat $?
 
+ echo -n "updating backend components in reverse proxy file :"
+ for components in catalogue user cart ; do
+ sed -i -e "/${COMPONENT}/s/local host/${COMPONENT}.roboshop"
+ done
+
  echo -n "Restarting ${COMPONENT}:"
  systemctl daemon-reload   &>> ${LOGFILE}
  systemctl restart nginx   &>> ${LOGFILE}
