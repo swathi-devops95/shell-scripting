@@ -24,8 +24,8 @@ fi
 }
 
 # echo "congfiguring frontend"
-echo -e "\e[31m  Configuring ${COMPONENT} .....! \e[0m \n"
-echo -n  "installing nginx : "
+echo -e "\e[35m  Configuring ${COMPONENT} .....! \e[0m \n"
+echo -n "installing nginx : "
 yum install nginx -y  &>>  ${LOGFILE}
 stat $?
 
