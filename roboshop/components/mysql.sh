@@ -47,14 +47,16 @@ stat $?
    DEFAULT_ROOT_PASSWORD=$( grep 'temporary password' /var/log/mysqld.log | awk -F " " '{print $NF}')
    stat $?
 
-#This should happens only once and that tofor the fiest time,whenit runs for the second time job fails
+#This should happens only once and that to for the first time, when it runs for the second time job fails
 #we need to ensure that this runs only once
+
    echo "show databases;" | mysql -uroot -pRoboShop@1         &>> ${LOGFILE}  
    if [ $? -ne 0 ]; then
    echo -n "performing default password reset of root account :"
    echo "ALTER USER 'root'@'localhost' IDENTIFIED BY 'RoboShop@1'" | mysql  --connect-expired-password  -uroot -p$DEFAULT_ROOT_PASSWORD        &>> ${LOGFILE}  
    stat $?
    fi
+   #Roboshop@1 we need to use as password"
 
   echo "show plugins;" | mysql -uroot -pRoboShop@1  | grep  validate_password     &>> ${LOGFILE} 
   if [ $? -eq 0 ]; then
