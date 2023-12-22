@@ -52,7 +52,7 @@ echo -n "Clean up of ${COMPONENT} :"
  stat $?
 
  echo -n "updating backend components in reverse proxy file :"
- for components in catalogue user cart ; do
+ for components in catalogue user cart shipping ; do
  sed -i -e "/${COMPONENT}/s/localhost/${COMPONENT}.roboshop/"  /etc/nginx/default.d/roboshop.conf
  done
 
