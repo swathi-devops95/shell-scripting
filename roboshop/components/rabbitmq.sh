@@ -2,7 +2,7 @@
 
 #echo "I am rabbitmq"
 
-set -e
+
  COMPONENT=rabbitmq
  source components/common.sh
 
