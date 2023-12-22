@@ -10,9 +10,9 @@
  echo -e "\e[32m  ${COMPONENT} Installation completed .....! \e[0m \n"
 
  echo -n "configiring ${COMPONENT} repositories:"
-curl -s https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.sh | bash  &>> ${LOGFILE} 
+ curl -s https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.sh | bash  &>> ${LOGFILE} 
  curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh |  bash     &>> ${LOGFILE}
-
+ stat $?
 
 echo -n "Installing ${COMPONENT}:"
 yum install rabbitmq-server -y       &>> ${LOGFILE}
