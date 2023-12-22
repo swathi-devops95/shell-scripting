@@ -9,8 +9,8 @@ source components/common.sh
 echo -e "\e[35m Configuring ${COMPONENT} ......! \e[0m \n"
 
 echo -n "Configuring ${COMPONENT} repositories:"
-curl -s https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.sh |  bash &>> ${LOGFILE}
-curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh |  bash  &>> ${LOGFILE}
+curl -s https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.sh  |  bash &>> ${LOGFILE}
+curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh  |  bash  &>> ${LOGFILE}
 stat $? 
 
 echo -n "Installing ${COMPONENT} :"
@@ -23,7 +23,7 @@ systemctl start rabbitmq-server    &>> ${LOGFILE}
 stat $? 
 
 sudo rabbitmqctl list_users | grep roboshop &>> ${LOGFILE}
-if [ $? -ne 0 ] ; then 
+if [ $1 -ne 0 ] ; then 
     echo -n "Creating ${COMPOMENT} user account :"
     rabbitmqctl add_user roboshop roboshop123 &>> ${LOGFILE}
     stat $? 
