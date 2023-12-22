@@ -3,7 +3,6 @@
 #echo "I am rabbitmq"
 
 LOGFILE="/tmp/${COMPONENT}.log"
-APPUSER="roboshop"
 USER_ID=$(id -u)
 COMPONENT=rabbitmq
 
@@ -29,8 +28,8 @@ fi
 echo -n  -e "\e[35m  configuring ${COMPONENT}.....! \e[0m \n"
 
 echo -n "configuring ${COMPONENT} repositories:"
-curl -s https://packagecloud.io/install/repositories/${COMPOMENT}/erlang/script.rpm.sh | bash  &>> ${LOGFILE} 
-curl -s https://packagecloud.io/install/repositories/${COMPOMENT}/${COMPOMENT}-server/script.rpm.sh | bash     &>> ${LOGFILE}
+curl -s https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.sh | bash  &>> ${LOGFILE} 
+curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh | bash     &>> ${LOGFILE}
 stat $?
 
 echo -n "Installing ${COMPONENT}:"
