@@ -117,8 +117,7 @@ MVN_PACKAGE() {
     echo -n "Generating the ${COMPONENT} artifacts :"
     cd /home/${APPUSER}/${COMPONENT}/
     mvn clean package       &>> ${LOGFILE} 
-    mv ${COMPONENT}-main shipping
-    mv target/${COMPONENT}-1.0.jar${COMPONENT} .jar
+    mv target/${COMPONENT}-1.0.jar ${COMPONENT} .jar
     stat $?
 }
 
