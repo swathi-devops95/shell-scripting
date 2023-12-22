@@ -1,14 +1,12 @@
 #!/bin/bash
 
-#echo "I am rabbitmq"
-
 LOGFILE="/tmp/${COMPONENT}.log"
 USER_ID=$(id -u)
 COMPONENT=rabbitmq
 
 
 if [ $USER_ID -ne 0 ] ; then
-    echo -e "\e[31m script is expected to be executed by root or with a sudo priviliged user \e[0m \n\t Example: \n\t sudo bash wrappers.sh catalogue"
+    echo -e "\e[31m script is expected to be executed by root or with a sudo priviliged user \e[0m \n\t Example: \n\t sudo bash wrappers.sh ${COMPONENT}"
     exit 1
 fi
 
@@ -33,7 +31,7 @@ curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/sc
 stat $?
 
 echo -n "Installing ${COMPONENT}:"
-yum  install rabbitmq-server -y       &>> ${LOGFILE}
+yum  install rabbitMQ-server -y       &>> ${LOGFILE}
 stat $?
 
 #  echo -n "starting ${COMPONENT}:"
