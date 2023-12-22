@@ -9,9 +9,9 @@ echo -e "\e[35m Configuring ${COMPONENT} ......! \e[0m \n"
 
 echo -n "Configuring ${COMPONENT} repositories:"
 curl -s https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.sh | sudo bash   &>> ${LOGFILE}
-yum install clean all
-yum makecache
-yum install erlang -y
+yum install clean all      &>> ${LOGFILE} 
+yum makecache               &>> ${LOGFILE}
+yum install erlang -y       &>> ${LOGFILE}
 curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh | sudo bash  &>> ${LOGFILE}
 stat $?
 
