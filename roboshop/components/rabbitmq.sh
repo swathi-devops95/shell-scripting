@@ -2,7 +2,7 @@
 
 #echo "I am rabbitmq"
 
-
+set -e
  COMPONENT=rabbitmq
  source components/common.sh
 
@@ -25,9 +25,12 @@ systemctl start rabbitmq-server      &>> ${LOGFILE}
 systemctl status rabbitmq-server     &>> ${LOGFILE} 
 stat $?
 
-echo -n "createing ${COMPONENT} user account:"
+sudo rabbitmqctl list_users | grep roboshop     &>> ${LOGFILE}
+    if [ $?  -ne  0 ];then
+echo -n "creating ${COMPONENT} user account:"
 rabbitmqctl add_user roboshop roboshop123      &>> ${LOGFILE}  
 stat $?
+fi
 
 echo -n "Configuring the permissions:"
 rabbitmqctl set_user_tags roboshop administrator
