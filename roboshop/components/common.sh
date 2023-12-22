@@ -58,7 +58,8 @@ stat $?
 }
 
 
-#configuring the service:
+
+    #configuring the service:
 
 CONFIG_SVE(){
 
@@ -108,9 +109,6 @@ stat $?
 
 CONFIG_SVE
 
-
-
-
 }
 
 MVN_PACKAGE() {
@@ -120,12 +118,8 @@ MVN_PACKAGE() {
     mv target/${COMPONENT}-1.0.jar ${COMPONENT} .jar
     stat $?
 }
+ 
 
-
-
-
-
-    
 
 
 JAVA() {
@@ -148,7 +142,7 @@ CONFIG_SVE
 
 }
 
-
+        
 
 
 
