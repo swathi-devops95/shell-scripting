@@ -155,9 +155,11 @@ CREATE_USER                  #calls create user function that creates user accou
 
 DOWNLOAD_AND_EXTRACT         #downloads and extracts components
 
+echo -e "Generating artifacts:"
+ cd /home/${APPUSER}/${COMPONENT} 
  pip3 install -r requirements.txt        &>> ${LOGFILE}
  stat $?
- 
+
 }
 
 
