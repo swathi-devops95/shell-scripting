@@ -52,8 +52,8 @@ echo -n "Clean up of ${COMPONENT} :"
  stat $?
 
  echo -n "updating backend components in reverse proxy file :"
- for component in catalogue user cart shipping ;do
- sed -i -e "/${COMPONENT}/s/localhost/${COMPONENT}.roboshop.internal/"  /etc/nginx/default.d/roboshop.conf
+ for component in catalogue user cart shipping  payment ; do
+  sed -i -e "/${COMPONENT}/s/localhost/${COMPONENT}.roboshop.internal/"  /etc/nginx/default.d/roboshop.conf
  done
 
  echo -n "Restarting ${COMPONENT}:"
@@ -62,9 +62,6 @@ echo -n "Clean up of ${COMPONENT} :"
  stat $?
 
  echo -e "\e[35m  ${COMPONENT} Installation is completed  \e[0m \n"
-
-
-
 
 
 
