@@ -64,7 +64,7 @@ stat $?
 CONFIG_SVE(){
 
 echo -n "Configuring the ${COMPONENT} system file : "
-sed -i -e 's/CART_ENDPOINT/cart.roboshop.internal/' -e 's/DBHOST/mysql.roboshop.internal/' -e 's/REDIS_ENDPOINT/redis.roboshop.internal/' -e 's/CATALOGUE_ENDPOINT/catalogue.roboshop.internal/' -e 's/MONGO_DNSNAME/mongodb.roboshop.internal/'  -e 's/REDIS_ENDPOINT/redis.roboshop.internal/' -e 's/MONGO_DNSNAME/mongodb.roboshop.internal/'   /home/${APPUSER}/${COMPONENT}/systemd.service
+sed -i -e 's/AMQPHOST/rabbitmq.roboshop.internal/'  -e's/USER_ENDPOINT/user.roboshop.internal/' -e's/CART_ENDPOINT/cart.roboshop.internal/'-e 's/CART_ENDPOINT/cart.roboshop.internal/' -e 's/DBHOST/mysql.roboshop.internal/' -e 's/REDIS_ENDPOINT/redis.roboshop.internal/' -e 's/CATALOGUE_ENDPOINT/catalogue.roboshop.internal/' -e 's/MONGO_DNSNAME/mongodb.roboshop.internal/'  -e 's/REDIS_ENDPOINT/redis.roboshop.internal/' -e 's/MONGO_DNSNAME/mongodb.roboshop.internal/'   /home/${APPUSER}/${COMPONENT}/systemd.service
 mv /home/${APPUSER}/${COMPONENT}/systemd.service /etc/systemd/system/${COMPONENT}.service
 stat $?
 
@@ -159,6 +159,15 @@ echo -e "Generating artifacts:"
  cd /home/${APPUSER}/${COMPONENT} 
  pip3 install -r requirements.txt        &>> ${LOGFILE}
  stat $?
+
+ USERID=$(id -u roboshop)
+ GROUPID=$(id -g roboshop)
+
+
+echo -n "updating the uid and gid of ${COMPONENT}.ini file"
+sed -i -e "/^uid/c uid =${USERID}" -e  "/^uid/c gid =${GROUPID}"       /home/${APPUSER}/${COMPONENT}/${COMPONENT}.ini
+stat $?
+CONFIG_SVE
 
 }
 
