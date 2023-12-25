@@ -165,7 +165,7 @@ echo -e "Generating artifacts:"
 
 
 echo -n "updating the uid and gid of ${COMPONENT}.ini file"
-sed -i -e "/^uid/c uid =${USERID}" -e  "/^uid/c gid =${GROUPID}"       /home/${APPUSER}/${COMPONENT}/${COMPONENT}.ini
+sed -i -e "/^uid/ c uid =${USERID}" -e  "/^gid/ c gid =${GROUPID}"       /home/${APPUSER}/${COMPONENT}/${COMPONENT}.ini
 stat $?
 CONFIG_SVE
 
