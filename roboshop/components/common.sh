@@ -142,6 +142,26 @@ CONFIG_SVE
 
 }
 
+PYTHON() {
+
+    echo -e "\e[35m Configuring ${COMPONENT}......! \e[0m \n"
+
+    echo -n "Installing python:"
+    yum install python36 gcc python3-devel -y        &>> ${LOGFILE}
+    stat $?
+
+        
+CREATE_USER                  #calls create user function that creates user account
+
+DOWNLOAD_AND_EXTRACT         #downloads and extracts components
+
+ pip3 install -r requirements.txt        &>> ${LOGFILE}
+ stat $?
+ 
+}
+
+
+
         
 
 
@@ -150,4 +170,3 @@ CONFIG_SVE
 
 
 
-#sed -i -e 's/AMQPHOST/rabbitmq.roboshop.internal/' -e 's/USERHOST/user.roboshop.internal/'  -e 's/CARTHOST/cart.roboshop.internal/'  -e 's/CARTENDPOINT/cart.roboshop.internal/' -e 's/DBHOST/mysql.roboshop.internal/' -e 's/REDIS_ENDPOINT/redis.roboshop.internal/'  -e 's/CATALOGUE_ENDPOINT/catalogue.roboshop.internal/' -e 's/MONGO_DNSNAME/mongodb.roboshop.internal/' -e 's/REDIS_ENDPOINT/redis.roboshop.internal/'  -e 's/MONGO_ENDPOINT/mongodb.roboshop.internal/' /home/${APPUSER}/${COMPONENT}/system
