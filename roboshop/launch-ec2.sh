@@ -17,7 +17,7 @@ AMI_ID="ami-0f75a13ad2e340a58"
 INSTANCE_TYPE="t2.micro"
 SG_ID="sg-02a14ad899c6d4f4e"            #B55 ALLOW ALL SECURITY GROUP ID
 
-aws ec2 run-instances --image-id ${AMI_ID}--instance-type ${INSTANCE_TYPE}  --security-group-ids ${SG_ID}  --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=${COMPONENT}}]"
+aws ec2 run-instances --image-id ${AMI_ID} --instance-type ${INSTANCE_TYPE}  --security-group-ids ${SG_ID}  --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=${COMPONENT}}]"
 
 
 
