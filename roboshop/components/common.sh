@@ -61,7 +61,7 @@ stat $?
 
     #configuring the service:
 
-CONFIG_SVE(){
+CONFIG_SVC(){
 
        echo -n "Configuring the ${COMPONENT} system file :"
         sed -i -e 's/AMQPHOST/rabbitmq.roboshop.internal/' -e 's/USERHOST/user.roboshop.internal/'  -e 's/CARTHOST/cart.roboshop.internal/'  -e 's/CARTENDPOINT/cart.roboshop.internal/' -e 's/DBHOST/mysql.roboshop.internal/' -e 's/REDIS_ENDPOINT/redis.roboshop.internal/'  -e 's/CATALOGUE_ENDPOINT/catalogue.roboshop.internal/' -e 's/MONGO_DNSNAME/mongodb.roboshop.internal/' -e 's/REDIS_ENDPOINT/redis.roboshop.internal/'  -e 's/MONGO_ENDPOINT/mongodb.roboshop.internal/' /home/${APPUSER}/${COMPONENT}/systemd.service
@@ -110,7 +110,7 @@ cd /home/${APPUSER}/${COMPONENT}/
 npm install    &>> ${LOGFILE}               #Will generate artifact
 stat $?
 
-CONFIG_SVE
+CONFIG_SVC
 
 }
 
@@ -140,7 +140,7 @@ DOWNLOAD_AND_EXTRACT    #downloads and extracts components
 MVN_PACKAGE
 
 
-CONFIG_SVE
+CONFIG_SVC
 
 
 }
@@ -170,7 +170,7 @@ echo -e "Generating artifacts:"
 echo -n "updating the uid and gid of ${COMPONENT}.ini file"
 sed -i -e "/^uid/ c uid =${USERID}" -e  "/^gid/ c gid =${GROUPID}"       /home/${APPUSER}/${COMPONENT}/${COMPONENT}.ini
 stat $?
-CONFIG_SVE
+CONFIG_SVC
 
 }
 
