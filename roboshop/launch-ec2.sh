@@ -26,13 +26,13 @@ aws ec2 run-instances --image-id ${AMI_ID} --instance-type ${INSTANCE_TYPE}  --s
 
 
 
-
+#aws cli command to launch an instance::::
 #aws ec2 run-instances --image-id ami-xxxxxxxx --count 1 --instance-type t2.micro --key-name MyKeyPair --security-group-ids sg-903004f8 --subnet-id subnet-6e7f829e
-
+########################################## 
 #--tag-specifications 'ResourceType=instance,Tags=[{Key=webserver,Value=production}]' 'ResourceType=volume,Tags=[{Key=cost-center,Value=cc123}]'
 
-#Each and everyu resource that you ceat in entrprice will have tags:
+#Each and every  resource that you create in enterprise will have tags:
 # BU-which business unit i belongs to
-# ENV-which environment it belongs to whether it is a production machine or testing or development
+# ENV-which environment it belongs to whether it is a production machine or "testing" or "development" or "production"
 # APP: What is the appliction we are running on machine.
 # Cost centre
