@@ -17,11 +17,16 @@ AMI_ID="ami-0f75a13ad2e340a58"
 INSTANCE_TYPE="t2.micro"
 SG_ID="sg-02a14ad899c6d4f4e"            #B55 ALLOW ALL SECURITY GROUP ID
 
-aws ec2 run-instances --image-id ${AMI_ID} --instance-type ${INSTANCE_TYPE}  --security-group-ids ${SG_ID}  --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=${COMPONENT}}]"
+
+echo -e "**** Creating \e[35m ${COMPONENT} \e[0m server is in progress ****"
+
+PRIVATEIP=$(aws ec2 run-instances --image-id ${AMI_ID} --instance-type ${INSTANCE_TYPE}  --security-group-ids ${SG_ID}  --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=${COMPONENT}}]" | jq '.Instances[].PrivateIpAddress' |sed -e 's/"//g')
+
+echo "Private ip of $COMPONENT IS $PRIVATEIP "
 
 
 
-
+ #aws ec2 run-instances --image-id "ami-0f75a13ad2e340a58" --instance-type t2.micro  --security-group-ids sg-02a14ad899c6d4f4e   --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=lab}]" | jq .
 
 
 
