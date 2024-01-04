@@ -13,16 +13,43 @@ if [ -z $1 ] ; then     #if the first argumnt is false that means first argument
     echo -e "\e[35m ex usage \e[0m  \n\t\t $ bash launch-ec2.sh shipping"
     exit 1
 fi
-AMI_ID="ami-0f75a13ad2e340a58"
+#AMI_ID="ami-0f75a13ad2e340a58"
+AMI_ID="$(aws ec2 describe-images --filters "Name=name,Values= DevOps-LabImage-CentOS7" | jq ". Images[].ImageId" |sed -e 's/"//g')"
 INSTANCE_TYPE="t2.micro"
-SG_ID="sg-02a14ad899c6d4f4e"            #B55 ALLOW ALL SECURITY GROUP ID
+#SG_ID="sg-02a14ad899c6d4f4e"            #B55_ALLOW_ALL SECURITY GROUP ID
+SG_ID="$(aws ec2 describe-security-groups --filters Name=group-name,Values=B55_Allow_All | jq ".SecurityGroups[].GroupId" |sed -e 's/"//g')"
+HOSTEDZONEID="Z02387131OVDT30NOMVXF"
 
 
 echo -e "**** Creating \e[35m ${COMPONENT} \e[0m server is in progress ****"
 
 PRIVATEIP=$(aws ec2 run-instances --image-id ${AMI_ID} --instance-type ${INSTANCE_TYPE}  --security-group-ids ${SG_ID}  --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=${COMPONENT}}]" | jq '.Instances[].PrivateIpAddress' |sed -e 's/"//g')
 
-echo "Private ip of $COMPONENT IS $PRIVATEIP "
+###This above command will create you an instanc along with fetching private ip address of instance and ithout quotes
+
+echo -e "Private ip Address of $COMPONENT IS $PRIVATEIP \n\n"               #HERE WE ARE CAPTURING PRIVATE IP HOW TO CREATE DNS RECORD????
+
+echo -e "creating DNS record of ${COMPONENT}:"
+
+sed -e "s/COMPONENT/${COMPONENT}/" -e "s/IPADRESS/${PRIVATEIP}/" route53.json > /tmp/r53.json
+
+aws route53 change-resource-record-sets --hosted-zone-id $HOSTEDZONEID --change-batch file:///tmp/r53.json
+
+echo -e "\e[36m **** Creating DNS record for the $COMPONENT has completed ****\e[0m \n\n"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -41,3 +68,17 @@ echo "Private ip of $COMPONENT IS $PRIVATEIP "
 # ENV-which environment it belongs to whether it is a production machine or "testing" or "development" or "production"
 # APP: What is the appliction we are running on machine.
 # Cost centre
+
+
+
+
+
+
+# aws ec2 describe-images \
+#     --owners amazon \
+#     --filters "Name=name,Values= DevOps-LabImage-CentOS7" "Name=root-device-type,Values=ebs"
+#     aws ec2 describe-images --filters "Name=name,Values= DevOps-LabImage-CentOS7" 
+
+
+
+#aws ec2 describe-security-groups --filters Name=group-name,Values=B55_Allow_All | jq ".SecurityGroups[].GroupId" |sed -e 's/"//g'
