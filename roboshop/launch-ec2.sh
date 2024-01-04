@@ -43,11 +43,11 @@ if [ "$1" == "all" ]; then
 
     for component in frontend mongodb catalogue redis user mysql  cart rabbitmq shipping payment; do
     COMPONENT=$component
-    create_ec2()
-    done
+    create_ec2
+done
 
 else
-     create_ec2()
+     create_ec2
 
 fi
 
