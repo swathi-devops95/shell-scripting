@@ -14,7 +14,7 @@ if [ -z $1 ] ; then     #if the first argumnt is false that means first argument
     exit 1
 fi
 #AMI_ID="ami-0f75a13ad2e340a58"
-AMI_ID="$(aws ec2 describe-images --filters "Name=name,Values= DevOps-LabImage-CentOS7" | jq ". Images[].ImageId" |sed -e 's/"//g')"
+AMI_ID="$(aws ec2 describe-images --filters "Name=name,Values= DevOps-LabImage-CentOS7" | jq ".Images[].ImageId" |sed -e 's/"//g')"
 INSTANCE_TYPE="t2.micro"
 #SG_ID="sg-02a14ad899c6d4f4e"            #B55_ALLOW_ALL SECURITY GROUP ID
 SG_ID="$(aws ec2 describe-security-groups --filters Name=group-name,Values=B55_Allow_All | jq ".SecurityGroups[].GroupId" |sed -e 's/"//g')"
@@ -29,7 +29,7 @@ PRIVATEIP=$(aws ec2 run-instances --image-id ${AMI_ID} --instance-type ${INSTANC
 
 echo -e "Private ip Address of $COMPONENT IS $PRIVATEIP \n\n"               #HERE WE ARE CAPTURING PRIVATE IP HOW TO CREATE DNS RECORD????
 
-echo -e "creating DNS record of ${COMPONENT}:"
+echo -e "creating DNS record of ${COMPONENT} is:"
 
 sed -e "s/COMPONENT/${COMPONENT}/" -e "s/IPADRESS/${PRIVATEIP}/" route53.json > /tmp/r53.json
 
