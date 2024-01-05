@@ -18,7 +18,7 @@ AMI_ID="$(aws ec2 describe-images --filters "Name=name,Values= DevOps-LabImage-C
 INSTANCE_TYPE="t2.micro"
 #SG_ID="sg-02a14ad899c6d4f4e"            #B55_ALLOW_ALL SECURITY GROUP ID
 SG_ID="$(aws ec2 describe-security-groups --filters Name=group-name,Values=B55_Allow_All | jq ".SecurityGroups[].GroupId" |sed -e 's/"//g')"
-HOSTEDZONEID="Z02387131OVDT30NOMVXF"
+HOSTEDZONEID="Z02387131OVDT30NOMVXF"    
 
 # create_ec2() {
 echo -e "**** Creating \e[35m ${COMPONENT} \e[0m server is in progress ****"
@@ -31,10 +31,9 @@ echo -e "Private ip Address of $COMPONENT IS $PRIVATEIP \n\n"               #HER
 
 echo -e "creating DNS record of ${COMPONENT} is:"
 
-sed -e "s/COMPONENT/${COMPONENT}/" -e "s/IPADRESS/${PRIVATEIP}/" route53.json > /tmp/r53.json
+sed -e "s/COMPONENT/${COMPONENT}/" -e "s/IPADDRESS/${PRIVATEIP}/" route53.json > /tmp/r53.json
 
-aws route53 change-resource-record-sets --hosted-zone-id $HOSTEDZONEID --change-batch file:///tmp/r53.json
-
+ aws route53 change-resource-record-sets --hosted-zone-id $HOSTEDZONEID --change-batch file:///tmp/r53.json
 echo -e "\e[36m **** Creating DNS record for the $COMPONENT has completed ****\e[0m \n\n"
 
 # }
