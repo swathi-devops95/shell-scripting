@@ -8,19 +8,19 @@
 # 5)DNS record :hosted zone ID
 
 COMPONENT=$1
-if [ -z $1 ] ; then     #if the first argumnt is false that means first argument is empty i want to make an action
+if [ -z $1 ] ; then                                                                                                    #if the first argumnt is false that means first argument is empty i want to make an action
     echo -e "\e[31m COMPONENT NAME IS NEEDED \e[0m \n\t\t"
-    echo -e "\e[35m ex usage \e[0m  \n\t\t $ bash launch-ec2.sh shipping"
+    echo -e "\e[35m ex usage: \e[0m  \n\t\t $ bash launch-ec2.sh shipping"
     exit 1
 fi
-#AMI_ID="ami-0f75a13ad2e340a58"
+                                                                                                                        #AMI_ID="ami-0f75a13ad2e340a58"
 AMI_ID="$(aws ec2 describe-images --filters "Name=name,Values= DevOps-LabImage-CentOS7" | jq ".Images[].ImageId" |sed -e 's/"//g')"
 INSTANCE_TYPE="t2.micro"
 #SG_ID="sg-02a14ad899c6d4f4e"            #B55_ALLOW_ALL SECURITY GROUP ID
 SG_ID="$(aws ec2 describe-security-groups --filters Name=group-name,Values=B55_Allow_All | jq ".SecurityGroups[].GroupId" |sed -e 's/"//g')"
 HOSTEDZONEID="Z02387131OVDT30NOMVXF"
 
-create_ec2() {
+# create_ec2() {
 echo -e "**** Creating \e[35m ${COMPONENT} \e[0m server is in progress ****"
 
 PRIVATEIP=$(aws ec2 run-instances --image-id ${AMI_ID} --instance-type ${INSTANCE_TYPE}  --security-group-ids ${SG_ID}  --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=${COMPONENT}}]" | jq '.Instances[].PrivateIpAddress' |sed -e 's/"//g')
@@ -37,19 +37,19 @@ aws route53 change-resource-record-sets --hosted-zone-id $HOSTEDZONEID --change-
 
 echo -e "\e[36m **** Creating DNS record for the $COMPONENT has completed ****\e[0m \n\n"
 
-}
+# }
 
-if [ "$1" == "all" ]; then
+# if [ "$1" == "all" ]; then
 
-    for component in frontend mongodb catalogue redis user mysql  cart rabbitmq shipping payment; do
-    COMPONENT=$component
-    create_ec2
-done
+#     for component in frontend mongodb catalogue redis user mysql  cart rabbitmq shipping payment; do
+#     COMPONENT=$component
+#     create_ec2
+# done
 
-else
-     create_ec2
+# else
+#      create_ec2
 
-fi
+# fi
 
 
 
