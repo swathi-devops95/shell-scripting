@@ -24,7 +24,7 @@ SG_ID="$(aws ec2 describe-security-groups --filters Name=group-name,Values=B55_A
 create_ec2() {
  echo -e "**** Creating \e[35m ${COMPONENT} \e[0m server is in progress ****"
 
- PRIVATEIP=$(aws ec2 run-instances --image-id ${AMI_ID} --instance-type ${INSTANCE_TYPE}  --security-group-ids ${SG_ID}  --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=${COMPONENT}}]" | jq '.Instances[].PrivateIpAddress' |sed -e 's/"//g')
+ PRIVATEIP=$(aws ec2 run-instances --image-id ${AMI_ID} --instance-type ${INSTANCE_TYPE}  --security-group-ids ${SG_ID}  --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=${COMPONENT}-${ENV}}]" | jq '.Instances[].PrivateIpAddress' |sed -e 's/"//g')
 
 ###This above command will create you an instanc along with fetching private ip address of instance and ithout quotes
 
